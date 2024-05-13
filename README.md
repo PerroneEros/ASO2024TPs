@@ -17,5 +17,7 @@ Sobre si es predecible, en el caso de sinHilos.py puede ser más facil de predec
 
 1)c) Sumaresta tarda de media 0.008 segundos, al sacar los comentarios se agrego mas código ejecutable, entre ellos dos FOR, donde el programa tardó más en ejecutarse, esta vez con una media de 1.75432
 
-2)a)![Imagen de WhatsApp 2024-05-13 a las 15 38 21_6e80916d](https://github.com/PerroneEros/ASO2024TPs/assets/166446910/838992f7-6c57-4ec5-88eb-bd843655d7be)
+2)a)b)c)![Imagen de WhatsApp 2024-05-13 a las 15 38 21_6e80916d](https://github.com/PerroneEros/ASO2024TPs/assets/166446910/838992f7-6c57-4ec5-88eb-bd843655d7be)
 [con_race_condition.txt](https://github.com/PerroneEros/ASO2024TPs/files/15298915/con_race_condition.txt)
+
+![2 comensales y 8 hamburgesas](https://github.com/PerroneEros/ASO2024TPs/assets/166446910/51386684-c693-4da8-b046-34ebd92dca2d)
