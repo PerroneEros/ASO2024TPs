@@ -1,0 +1,181 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+//punto 10
+/*10. Escribe un programa que solicite al usuario ingresar un número entero positivo. El 
+programa debe calcular la raíz cuadrada de este número y quedarse con la parte entera 
+del resultado. Luego, determina la cantidad de cifras que tiene el número ingresado. 
+Finalmente, eleva la parte entera de la raíz cuadrada a la cantidad de cifras y muestra este 
+resultado en pantalla.*/
+int main () {
+int valor_ingresado,numero_positivo,raiz_cuadrada_numero_positivo,resultado;
+cout << "ingrese un numero entero positivo" <<endl;
+cin >> numero_positivo;
+valor_ingresado = abs(numero_positivo);
+numero_positivo = abs(numero_positivo);
+raiz_cuadrada_numero_positivo = trunc(sqrt(numero_positivo));
+numero_positivo = trunc(log10(numero_positivo)) + 1;
+resultado =pow(raiz_cuadrada_numero_positivo,numero_positivo);
+cout <<"el valor ingresado es:" << valor_ingresado <<endl;
+cout <<"el resultado de la raiz cuadrada es:" << raiz_cuadrada_numero_positivo << endl;
+cout <<"el numero de cifras es:" << numero_positivo << endl;
+cout <<"el resultado final es:" << resultado << endl;
+return 0;
+}
+
+//punto 9
+/* Escribir un programa que devuelva la cantidad de cifras que tiene un número ingresado 
+por el usuario. Sabiendo que truncando (usando la función “trunc”) el resultado del 
+logaritmo en base 10 tenemos un valor que es la cantidad de cifras del número menos 1. */
+
+/*int main () {
+float numero, resultado;
+cout << "ingrese un numero:" << endl;
+cin >> numero; 
+resultado = trunc(log10(numero));
+cout << "la cantidad de cifras es:" << resultado + 1 <<endl;
+return 0;
+}*/
+
+//punto8
+/*Crea un programa que pida al usuario ingresar las coordenadas (x, y) de dos puntos en un
+plano cartesiano, y luego calcule e imprima en pantalla la distancia entre los dos puntos.*/
+/*int main(){
+float x1,x2,y1,y2,distancia;
+
+cout << "ingrese el x del primer punto:" << endl;
+cin >> x1;
+cout << "ingrese el y del primer punto:" << endl;
+cin >> y1;
+cout << "ingrese el x del segundo punto:" << endl;
+cin >>x2;
+cout << "ingrese el y del segundo punto:" << endl;
+cin >>y2;
+distancia =sqrt((pow((x2-x1),2))+(pow((y2-y1),2)));
+cout <<"la distancia entre los dos puntos es:" << distancia << endl;
+return 0;
+}*/
+
+//punto 7(preguntar en clase)
+/* Escribir un programa que calcule el valor de a, c y β. Sabiendo que   y γ = 60°.  */
+/*int main(){
+float opuesto,hipotenusa,alfa,beta;
+const int gama = 60 ,adyacente =4;
+alfa = 90;
+beta = 30;
+hipotenusa = 4/cos(beta);
+opuesto = sin(gama)*hipotenusa;
+cout <<"el valor del opuesto es:"<< opuesto <<endl;
+cout <<"el valor de la hipotenusa es:"<< hipotenusa <<endl;
+cout <<"el valor del adyacente es:"<< adyacente <<endl;
+cout <<"el valor de alfa es:"<< alfa <<endl;
+cout <<"el valor de gama es:"<< gama <<endl;
+cout <<"el valor de beta es:"<< beta <<endl;
+return 0;
+}*/
+
+//punto 6
+/*6. Escribir un programa que al ingresar las notas de los 3 parciales del curso, devuelva el
+valor del promedio, el valor del promedio redondeado (“round”) y el valor del promedio
+truncado (“trunc”).*/
+
+/*int main(){
+float nota_1,nota_2,nota_3,resultado_nota,resultado_nota_redondeda,resultado_nota_truncada;
+cout <<"ingrese la primer nota:" <<endl;
+cin >> nota_1;
+cout <<"ingrese la segunda nota:" <<endl;
+cin >> nota_2;
+cout <<"ingrese la tercera nota:" <<endl;
+cin >> nota_3;
+resultado_nota =(nota_1+nota_2+nota_3)/3;
+resultado_nota_redondeda=round(resultado_nota);
+resultado_nota_truncada=trunc(resultado_nota);
+cout <<"la nota redondea es:" << resultado_nota_redondeda <<endl;
+cout <<"la nota truncada es:" << resultado_nota_truncada <<endl;
+return 0;
+}*/
+
+//punto 5
+/*5. Escribir un programa que cuando el usuario ingrese los catetos de un triángulo rectángulo,
+calcule y muestre en consola el valor de la hipotenusa. (Teorema de Pitágoras).*/
+/*int main(){
+float adyacente,hipotenusa,opuesto;
+cout <<"ingrese el cateto adyacente:"<<endl;
+cin >> adyacente;
+cout <<"ingrese el cateto opuesto:" <<endl;
+cin >>opuesto;
+hipotenusa =sqrt(((opuesto*opuesto)+(adyacente*adyacente)));
+cout <<"la hipotenusa es: " << hipotenusa;
+return 0;
+ }*/
+
+//punto 4
+/*4. Escribir un programa que calcule el perímetro y el área de un círculo, dependiendo del
+radio que ingrese el usuario.*/
+
+/*int main(){
+float radio,perimetro,area;
+const float pi = 3.14;
+cout << "ingrese un radio: " << endl;
+cin >> radio;
+perimetro = pi*2*radio;
+area = pi*radio*radio;
+cout <<"el perimetro de la circunferencia es de: " << perimetro <<endl;
+cout <<"el area de la circunferencia es de: " << area;
+return 0;
+}*/
+
+//punto 3
+/*3. Calcular el valor del coseno, seno y tangente de un ángulo (entero) en grados, ingresado
+por el usuario. Recuerde que las funciones “cos”, “sin” y “tan” trabajan con ángulos en
+radianes.*/
+/*
+int main(){
+
+int grados;
+float seno,coseno,tangente,radianes;
+const float pi = 3.14;
+cout <<"ingrese un numero de grados: " <<endl;
+cin >> grados;
+radianes = (pi/180)*grados;
+coseno = cos(radianes);
+seno= sin(radianes);
+tangente = tan(radianes);
+cout << "los resultado del coseno es: " << coseno <<endl;
+cout << "los resultado del seno es: " << seno <<endl;
+cout << "los resultado de la tangente es: " << tangente <<endl;
+return 0;
+
+} */
+
+/*punto 2
+2. Escribir un programa que realice la conversión de grados a radianes. Dato: °.*/
+
+/*int main(){
+const float pi = 3.14;
+float grados,radianes;
+cout <<"ingrese numero de grados:" <<endl;
+cin >>grados;
+radianes = (pi/180)*grados;
+cout <<"la conversion de grados a radianes es: " << radianes;
+return 0;
+}
+*/
+
+
+/*punto 1
+1. Escribir un programa que calcule la raíz cuadrada de un número ingresado por el usuario.
+Tener en cuenta que no puede ser un número negativo, por lo tanto, solucionar ese
+problema usando alguna función de <cmath>.*/
+
+/*int main (){
+float numero, raiz_cuadrada;
+
+cout << "ingrese un numero postivo" <<endl;
+cin >>numero;
+numero = abs(numero);
+raiz_cuadrada= sqrt(numero);
+cout <<"el resultado es: " << raiz_cuadrada;
+return 0;
+}
+*/
