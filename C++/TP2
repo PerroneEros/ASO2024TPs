@@ -1,0 +1,348 @@
+/*Punto 10. Mediante programación C++, crea una calculadora haciendo uso de la estructura de
+control condicional Switch (sumar, restar, multiplicar y dividir).*/
+#include <iostream>
+using namespace std;
+
+int main() {
+    float numero_1, numero_2, total_operacion;
+    char operacion;
+
+    cout << "Escriba dos números con los que quiera operar: " << endl;
+    cin >> numero_1 >> numero_2;
+
+    cout << "Seleccione la operación (+, -, *, /): ";
+    cin >> operacion;
+
+    switch (operacion) {
+        case '+':
+            total_operacion = numero_1 + numero_2;
+            cout << "El resultado de la suma es: " << total_operacion << endl;
+            break;
+        case '-':
+            total_operacion = numero_1 - numero_2;
+            cout << "El resultado de la resta es: " << total_operacion << endl;
+            break;
+        case '*':
+            total_operacion = numero_1 * numero_2;
+            cout << "El resultado de la multiplicación es: " << total_operacion << endl;
+            break;
+        case '/':
+            if (numero_2 != 0) {
+                total_operacion = numero_1 / numero_2;
+                cout << "El resultado de la división es: " << total_operacion << endl;
+            } else {
+                cout << "Error: División por cero no permitida." << endl;
+            }
+            break;
+        default:
+            cout << "Operación no válida." << endl;
+            break;
+    }
+
+    return 0;
+}
+/*Punto 9. Hacer un programa en C++, que ayude a una empresa a incrementar los salarios de los
+trabajadores de la siguiente manera:
+Tipo de salario %
+◦ De 0 a $60000 20%
+◦ De $60000 a $100000 10%
+◦ De $100000 a $150000 5%
+◦ Más de $150000 3% 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main () {
+    float salario, total_salario;
+    cout << "cuanto es su salario:" << endl;
+    cin >> salario;
+
+  if(salario > 0){    
+    if (salario >= 150000){
+     total_salario = salario + (salario * 0.03);
+     cout << "el salario con incremento es de:$" << total_salario << endl;
+     }
+    else{ 
+     if ((salario >= 100000) && (salario <150000)) {
+      total_salario = salario + (salario * 0.05);
+      cout <<"el salario con incremento es de:$" << total_salario << endl;
+      }
+      else {
+       if ((salario >= 60000) && (salario < 100000))
+        {
+           total_salario = salario + (salario * 0.10);
+           cout <<"el salario con incremento es de:$" << total_salario << endl;
+        }
+       else{  
+        total_salario = salario +(salario * 0.20);
+        cout << "el salario con incremento es de:$" << total_salario << endl;
+       }
+      }
+    } 
+   }
+  else {
+    cout << "ingreso un salario negativo porfavor ingrese otra vez:" << endl;  
+   }
+return 0;  
+}
+*/
+/*Punto 8.Hacer un programa en C++, que solicite al usuario que ingrese una fecha y calcule el
+día correspondiente del año. Ejemplo, si se ingresa la fecha 31 12, el número que se
+visualizará será 365. (la fecha se debe ingresar en dos variables diferentes: dia y mes).
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+ int dia, mes, total_dias;
+
+ cout << "ingrese una fecha(dia mes):" << endl;
+ cin >> dia >> mes;
+ if ((dia > 0) && (dia <=31)){
+  if((mes > 0) && (mes <=12)){
+   switch (mes){
+   case 1:{
+       total_dias = dia;
+       cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 2:{
+       total_dias = 31 + dia;
+       cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 3:{
+       total_dias = 31+28+dia;
+       cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 4:{
+       total_dias = 31+28+31+dia;
+       cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 5:{
+       total_dias = 31+28+31+30+dia;
+       cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 6:{
+       total_dias = 31+28+31+30+31+dia;
+       cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 7:{
+       total_dias = 31+28+31+30+31+30+dia;
+       cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 8:{
+    total_dias = 31+28+31+30+31+30+31+dia;
+    cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 9:{
+    total_dias = 31+28+31+30+31+30+31+31+dia;
+    cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 10:{
+    total_dias = 31+28+31+30+31+30+31+31+30+dia;
+    cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 11:{
+    total_dias = 31+28+31+30+31+30+31+31+30+31+dia;
+    cout << "el dia del año es:" << total_dias << endl;
+    }
+   case 12:{
+    total_dias = 31+28+31+30+31+30+31+31+30+31+30+dia;
+    cout << "el dia del año es:" << total_dias << endl;
+    }
+   }
+  }
+  else{
+   cout << "mes invalido porfavor ingrese otro numero:" << endl;
+  }
+ }
+ else{
+ cout << "dia invalido por favor ingrese otro numero:" << endl;
+ }
+ return 0;
+}
+*/
+/* Punto 7. Hacer un programa en C++, para determinar el promedio de tres notas y determinar si el
+estudiante aprobó o no.
+
+#include <iostream>
+using namespace std;
+
+int main (){
+ float nota_1, nota_2, nota_3,promedio;
+ cout << "escriba las tres notas separadas por un espacio:" << endl;
+ cin >> nota_1 >> nota_2 >> nota_3;
+
+ promedio = (nota_1+nota_2+nota_3)/3;
+
+ if(promedio >= 6){
+  cout << "aprobo con un promedio de:" << promedio << endl;
+  }
+ else{
+    cout << "desaprobo con un promedio de:"<< promedio << endl;
+ }
+ return 0;
+}*/
+
+/*Punto 6. Hacer un programa en C++, para una tienda de helado da un descuento por compra a
+sus clientes con membresía dependiendo de su tipo, sólo existen tres tipos de
+membresía, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
+◦ Tipo A 10% de descuento
+◦ Tipo B 15% de descuento
+◦ Tipo C 20% de descuento
+
+#include<iostream>
+#include<cctype>
+#include<cmath>
+using namespace std;
+
+int main(){
+ float compra,total_a_pagar;
+ char membresia;
+
+ cout << "¿cuanto es el monto que debe abonar?:" << endl;
+ cin >> compra;
+ cout << "¿que tipo de membresia tiene?(A,B o C):" << endl;
+ cin >> membresia;
+ if((membresia == 'A') || (membresia == 'B')||(membresia == 'C')){
+    if(membresia =='A'){
+    total_a_pagar = compra -(compra*0.10);
+    cout << "el total de su compra con descuento es de:$" << total_a_pagar << endl;
+    }
+    else{
+     if(membresia == 'B'){
+     total_a_pagar = compra - (compra*0.15);
+     cout << "el total de su compra con descuento es de:$" << total_a_pagar << endl;
+     }
+     else{
+     total_a_pagar = compra - (compra*0.20);
+     cout << "el total de su compra con descuento es de:$" << total_a_pagar << endl;
+     }
+    }
+   }
+ else{
+   cout << "ingreso mal la membresia" << endl;
+ }
+ return 0;
+}*/
+
+/*Punto 5 Hacer un programa en C++, para ayudar a un trabajador a saber cuál será su sueldo
+semanal, se sabe que, si trabaja 40 horas o menos, se le pagará $1000 por hora, pero si
+trabaja más de 40 horas entonces las horas extras se le pagarán a $2000 por hora.
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main(){
+ int horas,total_sueldo_semana;
+ cout << "¿cuantas horas trabajo en la semana?:" << endl;
+ cin >> horas;
+ if (horas <= 40){
+  total_sueldo_semana = horas*1000;
+  cout << "el sueldo es de:$" << total_sueldo_semana << endl;
+ }
+ else{
+  total_sueldo_semana = (40*1000)+(horas-40)*2000;
+  cout << "el sueldo es de:$" << total_sueldo_semana << endl;
+ }
+ return 0;
+}
+*/
+/*Punto 4 Hacer un programa en C++, para una tienda de zapatos que tiene una promoción de
+descuento para vender al mayor, esta dependerá del número de zapatos que se compren.
+Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; si el
+número de zapatos es mayor de veinte, pero menor de treinta, se le otorga un 20% de
+descuento; y si son más treinta zapatos se otorgará un 40% de descuento. El precio de
+cada zapato es de $8000.
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main(){
+ int cantidad_zapatos, total_compra_sin_descuento, total_compra;
+ cout <<"¿cuantos zapatos va a comprar?:" << endl;
+ cin >> cantidad_zapatos;
+ total_compra_sin_descuento = cantidad_zapatos * 8000;
+ if ((cantidad_zapatos >= 10)&&(cantidad_zapatos < 20)){  //tiene un 10% de descuento
+  total_compra = total_compra_sin_descuento - (total_compra_sin_descuento * 0.10);
+  cout << "el total de la compra con descuento es de:" << total_compra;
+  }
+ else {
+  if ((cantidad_zapatos >= 20) && (cantidad_zapatos < 30)){    //tiene un descuento del 20%
+    total_compra = total_compra_sin_descuento - (total_compra_sin_descuento * 0.20);
+    cout << "el total de la compra con descuento es de:" << total_compra << endl;
+   }
+   else{                                                    //tiene un descuento del 40%
+    total_compra = total_compra_sin_descuento - (total_compra_sin_descuento * 0.40);
+    cout << "el total de la compra es de:" << total_compra << endl;
+   }
+  }
+  return 0;
+}
+*/
+
+/* Punto 3 Hacer un programa en C++, que lea una letra y diga si es una vocal.
+#include <iostream>
+#include <cctype>                //use esa libreria para poder usar el tipo char
+using namespace std;
+
+int main(){
+char letra;
+ cout << "escriba una letra:" << endl;
+ cin >> letra;
+ if ((letra == 'a')||(letra =='e')||(letra=='i')||(letra=='o')||(letra=='u')){
+     cout << "es vocal" << endl;
+     }
+ else {
+    cout << "no es vocal" << endl;
+ }
+ return 0;
+}
+*/
+
+/* punto 2 Hacer un programa en C++, que lea tres números y diga cuál es el mayor.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+ int numero_1, numero_2, numero_3;
+ cout << "escriba tres numeros (separados por un espacio):" << endl;
+ cin >> numero_1 >> numero_2 >> numero_3;
+
+  if (( numero_1 >= numero_2 ) && ( numero_1 >= numero_3 )) {
+  cout << "el mayor de los numero es:" << numero_1 << endl;
+  }
+  else {
+  if (( numero_2 >= numero_1 ) && ( numero_2 >= numero_3 ))
+   cout << "el mayor de los 3 numeros es:" << numero_2 << endl;
+  else
+   cout <<"el mayor de los numero es:" << numero_3 << endl;
+  }
+return 0;
+ }
+*/
+
+/* punto 1 Hacer un programa en C++, que diga si un número es par o impar.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main () {
+ int numero , resultado;
+ cout << "ingrese un numero" << endl;
+ cin >> numero;
+ resultado = numero % 2;
+ if ( resultado == 0 ){          //el % es para calcular el resto de la division
+  cout <<" el numero es par "<<endl;
+  }
+ else {
+  cout << "el numero es impar "<< endl;
+  }
+ cout << endl;
+ return 0;
+}
+*/
