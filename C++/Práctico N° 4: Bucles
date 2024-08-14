@@ -1,0 +1,315 @@
+/*
+1. Escribir un programa que muestre los números del 1 al 10 utilizando un bucle while.
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main (){
+    int i = 1;
+    while ( i <= 10 ){
+        cout << i << endl;
+        i++;
+    }
+}
+*/
+/*
+2. Escribir un programa que pida al usuario un número y muestre su tabla de multiplicar
+utilizando un bucle for.*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main () {
+    int numero;
+    int multiplo;
+    cout << "ingrese un numero:" << endl;
+    cin >> numero;
+    
+    multiplo = 0;
+    for (int i = 1; i <= numero ; i++){
+        multiplo = numero * i;
+        cout << numero << "*" << i << " =" << multiplo << endl;
+    }
+    return 0;
+}
+*/
+/*
+3. Escribir un programa que calcule la suma de los primeros n números naturales utilizando un
+bucle while.*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+    int numero,i,suma;
+    
+    cout << "ingrese un numero:" << endl;
+    cin >> numero;
+    suma = 0;
+    i = 0;
+    while (i <= numero ){
+        suma = i + suma;
+        i++;
+    }
+    cout << "la suma de los numero es:" << suma << endl;
+    
+    return 0;
+}
+*/
+/*
+4. Escribir un programa que pida al usuario un número y muestre sus divisores utilizando un
+bucle for.*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+ int numero;
+ 
+ cout << "ingrese un numero:" << endl;
+ cin >> numero;
+ cout << "los divisores de " << numero << "son:";
+ 
+ for (int i = 1;i <= numero;i++){
+    
+    if ((numero % i )== 0){
+        cout << i << " ";
+    }
+ }
+ return 0;
+}
+*/
+/*
+5. Escribir un programa que pida al usuario una palabra y muestre sus letras una por una
+utilizando un bucle while.
+Ayuda: usar la función length(), propia de la librería string para saber la cantidad de caracteres
+de la palabra. Además, saber que si:
+string palabra = “ejercicio”;
+cout « palabra[3]; //Muestra la letra r porque la primera letra ocupa el lugar 0
+cout « palabra[8] //Muestra la letra o porque la última letra es palabra.length() – 1
+*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main (){
+    string palabra;
+    int cantidad,i;
+    cout << "ingrese una palabra:" << endl;
+    cin >> palabra;
+    cantidad = palabra.length();
+     i=0;
+     while (i <= cantidad) {
+         cout << palabra [i] << endl;
+         i++;
+     }
+    return 0;
+}*/
+/*
+6. Escribir un programa que calcule el factorial de un número utilizando un bucle for.
+*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+    
+    int factorial,numero;
+    
+    cout << "ingrese un numero:" << endl;
+    cin >> numero;
+    
+    factorial=1;
+    
+    for (int i=1;i <= numero;++i){
+        factorial *= i;
+    }
+    cout << "el factorial de " << numero << " es: " << factorial <<endl; 
+    return 0;
+}
+*/
+/*
+7. Escribir un programa que pida al usuario un número y determine si es primo o no utilizando
+un bucle while.*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main () {
+    int numero;
+    cout << "ingrese un numero:" << endl;
+    cin >> numero;
+    
+
+    return 0;
+}
+*/
+/*8. Escribir un programa que calcule la media de una cantidad de números introducidos por
+teclado do-while.
+*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+    int numero;
+    
+    cout << "ingrese un numero:" << endl;
+    cin >> numero;
+    
+    int acumulador = 0;
+    int contador = 0;
+    
+    do {
+     acumulador += numero;
+     contador++;
+     cin >> numero;    
+    }while(numero != 0);
+    
+    cout << "la cantidad de numeros ingresados es de: " << contador << " y el promedio es de: " << acumulador/contador << endl;
+    
+    return 0;    
+}
+*/
+/*9.Escribir un programa que al ingresar el lado de un cuadrado dibuje en consola un cuadrado
+con el carácter “*”. Por ejemplo, al ingresar lado = 4, el dibujo debe quedar de la siguiente
+manera.
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main (){
+    int lado,altura;
+    
+    cout << "ingrese el lado de un cuadrado:" << endl;
+    cin >> lado;
+    
+    altura = lado;
+    
+    for (int i = 1;i <= altura;i++){
+     cout << "*";
+     for (int j = 1;j < lado;j++){
+         cout << "\t *" ;
+     }
+     cout << endl;
+    }
+
+   return 0;
+}
+*/
+/*10. Misma consigna que el ejercicio anterior pero ahora dejando los espacios del medio sin llenar.
+Por ejemplo, al ingresar lado = 4, el dibujo debe quedar de la siguiente manera.
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main (){
+    int lado,altura;
+    
+    cout << "ingrese el lado de un cuadrado:" << endl;
+    cin >> lado;
+    
+    altura = lado;
+    
+    for (int i = 1;i <= altura;i++){
+     cout << "* \t";
+     for (int j = 1;j < lado;j++){
+        if (((i == 1)&&((j >= 1 )&&( j <= lado)))||((i == altura)&&(((j >= 1 )&&( j <= lado))))||(j == lado- 1)){
+            cout << "*";
+        } else {
+            cout << "  "; // Espacio en el interior del cuadrado
+        }
+        cout <<"\t";
+     }
+     cout << endl;
+    }
+
+   return 0;
+}
+*/
+/*11. Escribir un programa que solicite al usuario ingresar un número entero positivo y luego
+imprima en la consola una matriz cuadrada con la diagonal principal compuesta por números
+en forma ascendente hasta ese valor y los demás elementos de la matriz iguales a cero. Por
+ejemplo, si el usuario ingresa el número 6, la matriz resultante debe ser la siguiente:
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main (){
+    int numero,altura,lado,contador;
+    
+    cout << "ingrese un numero entero positivo:" << endl;
+    cin >> numero;
+    
+    altura = numero;
+    lado = numero;
+    contador = 0;
+    
+    for (int i = 0;i <= altura;i++){
+        for (int j = 0;j <= lado;j++){
+         if (i == j){
+          cout << contador;
+          contador += 1;
+         }
+         else 
+         cout << "0";
+        }
+        cout << endl;
+    }
+    return 0;
+} 
+*/
+/*12. Escribir un programa que genere un número aleatorio entre 1 y 100, y le pida al usuario que
+adivine el número. El programa debe indicar si el número ingresado por el usuario es mayor
+o menor que el número generado, y permitir que el usuario ingrese otro número. El programa
+debe seguir solicitando que el usuario ingrese un número hasta que adivine el número
+correcto. Una vez que el usuario adivine el número, el programa debe mostrar cuántos intentos
+le llevó al usuario adivinarlo.
+Ayuda: Declarar las siguientes bibliotecas y usar las siguientes funciones:
+*/
+/*
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main (){
+    int numeroadivinar,numeroingresado,intentos = 0;
+    srand(time(NULL));
+    
+    numeroadivinar = rand() % 100 + 1;
+    
+   do{
+     cout << "adivina el numero de (1 a 100):";
+     cin >> numeroingresado;
+     
+    if (numeroingresado > numeroadivinar){
+        cout << "el numero ingresado es mayor al numero a adivinar" << endl;
+        intentos ++;
+    }
+    else if (numeroingresado < numeroadivinar){
+        cout << "el numero ingresado es menor al numero a adivinar" << endl;
+        intentos ++;
+    }
+    else if (numeroingresado == numeroadivinar) {
+      cout << "Adivinaste el numero!!" << endl;
+      intentos ++;
+      cout << "intentaste adivinarlo: " << intentos << " veces" << endl;
+    }
+    
+   }while(numeroingresado != numeroadivinar);
+   
+    return 0;
+}
+*/
