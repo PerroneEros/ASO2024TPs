@@ -1,0 +1,240 @@
+/*
+8. ¿Cuál es la forma correcta de utilizar operadores lógicos en una expresión condicional en C++
+para evaluar si una variable x está dentro de un rango dado, en este caso tiene entre 5 y 10?
+a) if (5< x <10) { //código a ejecutar}
+b) if (x < 5 && x > 10) { //código a ejecutar}
+c) if (x > 5 && x < 10) { //código a ejecutar} ESTA 
+d) if (x > 5 || x < 10) { //código a ejecutar}
+*/
+/*
+7. ¿Cuál es la sintaxis correcta del condicional if en C++?
+a) if (x = 10) { //código a ejecutar}
+b) if x = 10 {//código a ejecutar }
+c) if (x == 10) { //código a ejecutar} ESTA
+d) if x == 10 { //código a ejecutar}
+*/
+/*
+6. Verdadero o falso
+a) En C++, la sintaxis para un condicional simple es la siguiente: VERDADERO
+b) Es posible tener múltiples condiciones en un solo condicional utilizando el operador lógico
+"&&" (y) o "||" (o). VERDADERO
+c) La sentencia "else if" se utiliza para evaluar una segunda condición sólo si la primera
+condición en el condicional "if" es falsa. VERDADERO
+d) El siguiente código mostrará ese mensaje en consola
+*/
+/*
+5.(OPCIONAL) Escriba un programa que devuelva la fecha para realizar un viaje, esta fecha
+será obtenida de una forma caprichosa con datos propios del usuario. El programa deberá
+solicitar al usuario el nombre y la fecha de nacimiento (día, mes y año). Usando la función
+“length” propia de la librería “string”, obtendrá la cantidad de caracteres que conforman su
+nombre, si este valor es mayor que 12 entonces deberá sumar los dígitos de ese valor (ejemplo
+si es 13 el resultado será 4), este valor deberá guardarse en una variable llamada “mes_viaje”.
+Luego con la fecha de nacimiento deberá multiplicar el día y el mes y dividir el año por el
+valor anterior (año/(día*mes)), quedándose solo con la parte entera del resultado de la
+división, este resultado se guardará en una variable llamada “dia_viaje”, si es mayor que 31
+se guardará el valor 3. Por último, mostrar en consola que día el usuario se irá de viaje.
+Consideraciones:
+• Usar getline para obtener el nombre del usuario, ya que este puede ser compuesto
+(getline(cin, nombre)).
+• La función length() debe usarse de la siguiente forma: nombre.length(), donde
+nombre es una variable de tipo string. Ese sentencia se debe asignar a una variable de
+tipo entero. Por ejemplo: num_letras = nombre.length()
+*/
+/*
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main (){
+ 
+ int dia, mes, año, num_letras, dia_viaje, primer_digito, segundo_digito, mes_viaje;
+ string nombre;
+ 
+ cout << "ingrese su nombre: " << endl;
+ getline(cin,nombre);
+ cout << "ingrese fecha de nacimiento (dia,mes y año): " << endl;
+ cin >> dia >> mes >> año;
+ 
+ num_letras = nombre.length();
+ 
+ if ((num_letras >= 12) && (num_letras < 100)) {
+     primer_digito = num_letras / 10;
+     segundo_digito = num_letras % 10;
+     mes_viaje = primer_digito + segundo_digito;
+    }
+ else{
+     mes_viaje = num_letras;
+ }  
+  
+ dia_viaje = trunc(año/(dia * mes));
+ 
+ if(dia_viaje >= 31){
+      dia_viaje = 3;
+    }
+ else{
+     dia_viaje = dia_viaje;
+ }   
+ cout << "el dia del viaje es: " << dia_viaje << endl;
+ cout << "el mes del viaje es: " << mes_viaje << endl;
+return 0;
+}
+*/
+/*
+4. Escriba un programa que solicite al usuario dos números enteros entre 1 y 10, y muestre en
+pantalla el resultado de la división entre el primero y el segundo si ambos números son pares.
+Si alguno de los números es impar, el programa debe mostrar el resultado del número mayor
+elevado al menor. Si alguno de los números no está en el rango especificado debe mostrar un
+mensaje de error.
+Tener en cuenta que la división puede dar valores decimales.
+*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+    
+    int numero1, numero2, resultado1;
+    float resultado2;
+    cout << "escriba dos numeros enteros del 1 al 10:" << endl;
+    cin >> numero1 >> numero2;
+    
+    numero1 = abs(numero1);
+    numero2 = abs(numero2);
+    
+    if (((numero1 >= 0) && (numero1 <= 10)) && ((numero2 >= 0) && (numero2 <= 10))) {
+       
+      if ((numero1 % 2 == 0) && (numero2 % 2 == 0)){
+          resultado2 = numero1 / numero2;
+          cout << "el resultado de la division es: " << resultado2 << endl;
+        }
+      else{
+          if(numero1 >= numero2){
+              resultado1 = pow(numero2,numero1);
+              cout << "el resultado de el numero mayor elevado al menor es: " << resultado1 << endl;
+            }
+            else{
+                resultado1 = pow(numero1,numero2);
+                cout << "el resultado deel numero mayor elevado al menor es: " << resultado1 << endl;
+            } 
+        } 
+    }
+    else{
+        cout << "ERROR el numero ingresado es incorrecto" << endl;
+    } 
+return 0;
+}
+*/
+/*
+3. Escriba un programa que solicite al usuario un número entero, y muestre en pantalla si es par
+o impar. Si es par mostrar en consola la cantidad de cifras que tiene el número ingresado y si
+es impar mostrar en consola la primera cifra del número ingresado.
+*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+ 
+ int numero, cantidad_de_cifras, primera_cifra, potencia; 
+
+ cout << "ingrese un numero entero: " << endl;
+ cin >> numero;
+ 
+ numero = abs(numero);
+ 
+ if ( (numero % 2) == 0 ){
+    cout << "el numero es par" << endl; 
+    cantidad_de_cifras = trunc(log10(numero)) + 1;                      //asi se calcula la cantidad de cifras 
+    cout << "la cantidad de cifras es: " << cantidad_de_cifras << endl;
+ }
+ else{
+     if(( numero % 2 != 0 )){
+       cout << "el numero es impar" << endl;
+       cantidad_de_cifras = log10(numero);
+       potencia = pow(10,cantidad_de_cifras);                           //asi se calcula la primer cifra
+       primera_cifra = numero /potencia ; 
+       cout << "la primera_cifra es: " << primera_cifra << endl;
+     }
+ }
+return 0;    
+}
+*/
+/*
+2. Escriba un programa que solicite al usuario el valor de un ángulo en grados, y muestre en
+pantalla su valor en radianes. Si el valor ingresado es mayor que 360, el programa debe
+calcular cuantas vueltas dió (1 vuelta = 360°) y en qué cuadrante se encuentra dicho ángulo.
+Si es menor que 360° que calcule el seno, coseno y tangente de dicho ángulo.
+*/
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+
+ float grados, radianes, seno, coseno , tangente, vueltas, angulo_cuadrante;
+ const float pi = 3.14;
+ 
+ cout << "ingrese un angulo en grados: " << endl;
+ cin >> grados;
+  radianes = grados *(pi/180);
+ cout << "el valor del angulo en radianes es: " << radianes << endl;
+    
+ if (grados >= 360){
+     
+     vueltas = grados/360;
+     angulo_cuadrante = grados - (vueltas * 360);
+     
+     if ((angulo_cuadrante >= 0 ) && (angulo_cuadrante <= 90)){
+        cout << "el angulo esta en el primer cuadrante" << endl;   
+     }else if ((angulo_cuadrante > 90 ) && (angulo_cuadrante <= 180)){
+         cout << "el angulo esta en el segunfo cuadrante" << endl;
+     }else if ((angulo_cuadrante > 180 ) && (angulo_cuadrante <= 270)){
+         cout << "el angulo esta en el tercer cuadrante" << endl;
+     }else if ((angulo_cuadrante > 270 ) && (angulo_cuadrante <= 360 )){
+         cout << "el angulo esta en el cuarto cuadrante" << endl;
+     }
+     
+ }
+ else{
+     if (grados < 360){
+        
+        seno = sin(grados);
+        coseno = cos(grados);
+        tangente = tan(grados);
+        
+        cout << "el seno es: " << seno << endl;
+        cout << "el coseno es: " << coseno << endl;
+        cout << "el tangente es: " << tangente << endl;
+     }
+ } 
+ return 0;
+}
+*/
+/*
+1. Escriba un programa que solicite al usuario dos números enteros y los intercambie si el
+primero es mayor que el segundo. Luego, muestre en pantalla los valores de ambos números.
+*/
+/*#include <iostream>
+using namespace std;
+
+int main (){
+ 
+ int numero_1 ,numero_2;
+ 
+ cout << "escriba dos numeros enteros:" << endl;
+ cin >> numero_1 >> numero_2;
+ 
+ if (numero_1 > numero_2){
+    cout << "los numeros que ingreso ordenados son: " << numero_2 <<" " << numero_1 << endl; 
+  }
+ else{
+    cout << "los numeros que ingreso ordenados son: " << numero_1 << " " << numero_2 << endl; 
+ }
+ 
+ return 0;
+}
+*/
