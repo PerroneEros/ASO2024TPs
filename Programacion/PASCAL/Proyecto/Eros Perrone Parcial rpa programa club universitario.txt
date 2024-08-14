@@ -1,0 +1,61 @@
+program ClubUniversitario;
+//Este programa tiene como fin ver quien pasa o no al club y si es que pasa te dice que descuento obtiene. 
+var edad:integer;
+    genero, tarjeta_club:char;
+    descuento_tarjeta, descuento_genero, valor_final_entrada:real;
+const valor_entrada = 1000;
+begin 
+ writeln('ingrese su genero(F:femenino M:masculino)');
+ readln(genero);
+ 
+ writeln('ingrese su edad');
+ readln(edad);
+ 
+ writeln('tiene tarjeta del club(S:si N:no)');
+ readln(tarjeta_club);
+ 
+ edad := abs(edad);             //puse el valor absoluto por si alguien ponia alguna edad negativa
+   
+ if (edad >= 18) then
+  begin
+    if ((genero = 'F') or (genero = 'f')) then      //y puse F y f por si tenian las minusculas activadas
+     begin    
+        if ((tarjeta_club ='S' ) or (tarjeta_club = 's')) then
+            begin   
+             writeln('Obtiene un descuento del 10% por el genero');
+             descuento_genero := valor_entrada * 0.1;
+             writeln('Obtiene un descuento del 20% por la tarjeta');
+             descuento_tarjeta := valor_entrada *0.2;
+             valor_final_entrada := valor_entrada - (descuento_genero + descuento_tarjeta);
+             writeln('El valor de la entrada es de:$',valor_final_entrada:5:2); 
+            end
+        else
+            begin
+             writeln('Obtiene el descuento del 10% por el genero');
+             descuento_genero := valor_entrada * 0.1;
+             valor_final_entrada := valor_entrada - (descuento_genero + descuento_tarjeta);
+             writeln('El valor de la entrada es de:$',valor_final_entrada:5:2);
+            end; 
+     end        
+    else
+        begin
+            if (((genero = 'M') or (genero = 'm')) and ((tarjeta_club ='S' ) or (tarjeta_club = 's'))) then
+                begin
+                 writeln('Obtiene un descuento del 20% por la tarjeta');
+                 descuento_tarjeta := valor_entrada * 0.2;
+                 valor_final_entrada := valor_entrada - (descuento_genero + descuento_tarjeta);
+                 writeln('El valor de la entrada es de:$',valor_final_entrada:5:2);
+                end
+            else 
+                begin            
+                 writeln('No tiene desceunto de genero');
+                 descuento_genero := 0; 
+                 valor_final_entrada := valor_entrada - (descuento_genero + descuento_tarjeta);
+                 writeln('El valor de la entrada es de:$',valor_final_entrada:5:2);
+                end;
+        end;
+  end
+ else
+    writeln('No pasa al club por tener menos de 18 años');
+readln();
+end.
