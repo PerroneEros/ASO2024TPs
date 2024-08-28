@@ -1,4 +1,4 @@
-/*Punto 10. Mediante programación C++, crea una calculadora haciendo uso de la estructura de
+/*Punto 10. Mediante programación C++, crea una calculadora haciendo uso de la estructura 
 control condicional Switch (sumar, restar, multiplicar y dividir).*/
 #include <iostream>
 using namespace std;
