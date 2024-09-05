@@ -1,0 +1,6 @@
+100;arroz;10 
+102;fideos;5 
+135;lentejas;8 
+138;porotos;6 
+140;sal gruesa;5 
+201;aceite;20
