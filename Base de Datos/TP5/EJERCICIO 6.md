@@ -1,5 +1,7 @@
 # Normalización de la Base de Datos
 
+![Esquema de Normalización](https://github.com/user-attachments/assets/0350f101-c707-463a-8fdc-5de2375653a8)
+
 ## 1NF (Primera Forma Normal)  
 - **Requisito:** Todos los atributos deben contener valores atómicos (indivisibles), sin conjuntos ni listas en las columnas.
 - **Cumplimiento:** En este esquema, cada campo almacena un valor único y atómico. Por ejemplo, `año_olimpiada`, `pais_olimpiada`, `nombre_deportista`, etc., todos son valores simples y únicos por columna.
