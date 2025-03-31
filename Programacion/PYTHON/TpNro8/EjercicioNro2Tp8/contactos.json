@@ -1,0 +1,23 @@
+[
+    {
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "telefono": "123456789",
+        "correo": "juan.perez@example.com",
+        "direccion": "Calle Falsa 123"
+    },
+    {
+        "nombre": "Ana",
+        "apellido": "Gómez",
+        "telefono": "987654321",
+        "correo": "ana.gomez@example.com",
+        "direccion": "Avenida Siempre Viva 456"
+    },
+    {
+        "nombre": "Luis",
+        "apellido": "Martínez",
+        "telefono": "555123456",
+        "correo": "luis.martinez@example.com",
+        "direccion": "Boulevard Central 789"
+    }
+]

@@ -1,0 +1,24 @@
+[
+    {
+        "nombre": "Los Simpsons",
+        "lider": {
+            "nombre": "Homero",
+            "apellido": "Simpson",
+            "direccion": {
+                "calle": "Av. Siempre Viva",
+                "numero": 742
+            }
+        }
+    },
+    {
+        "nombre": "Los Flanders",
+        "lider": {
+            "nombre": "Ned",
+            "apellido": "Flanders",
+            "direccion": {
+                "calle": "Av. Siempre Viva",
+                "numero": 730
+            }
+        }
+    }
+]

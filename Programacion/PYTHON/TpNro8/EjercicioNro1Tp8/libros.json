@@ -1,0 +1,6 @@
+[
+    {"titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "genero": "Realismo mágico", "anio": 1967, "ISBN": 123456789},
+    {"titulo": "1984", "autor": "George Orwell", "genero": "Distopía", "anio": 1949, "ISBN": 234567890},
+    {"titulo": "El principito", "autor": "Antoine de Saint-Exupéry", "genero": "Fábula", "anio": 1943, "ISBN": 345678901},
+    {"titulo": "Don Quijote de la Mancha", "autor": "Miguel de Cervantes", "genero": "Novela", "anio": 1605, "ISBN": 456789012}
+]
