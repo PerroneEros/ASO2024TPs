@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 OPR/113.0.0.0" version="24.7.17">
+  <diagram name="Página-1" id="qfIWSIQ9oBVufYIBHPa3">
+    <mxGraphModel dx="833" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-1" value="Empleado" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="240" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-2" value="- dni:str&lt;div&gt;- nombre:str&lt;/div&gt;&lt;div&gt;- apellido:str&lt;/div&gt;&lt;div&gt;- fechaIngreso:&#39;Fecha&#39;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pg1PdgMVT-_aMi2HHLWd-1">
+          <mxGeometry y="26" width="240" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pg1PdgMVT-_aMi2HHLWd-1">
+          <mxGeometry y="114" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-4" value="Empleado (dni:str, nombre:str, apellido:str, fechaIngreso:&#39;Fecha&#39;) &lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;Comandos y consultas&amp;gt;&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pg1PdgMVT-_aMi2HHLWd-1">
+          <mxGeometry y="118" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;EmpleadoSalarioFijo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;- salarioMinimo: float&lt;/p&gt;&lt;div&gt;&amp;nbsp;- porcentajeAdicional: float&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ EmpleadoSalarioFijo (salarioMinimo:float, porcentajeAdicional:float)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;lt;&amp;lt;ConsultasYComandos&amp;gt;&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="160" y="320" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;EmpleadoSalarioComision&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- salarioMinimo: float&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- clientesCaptados: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- monto: float&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ EmpleadoSalarioComision (salarioMinimo:float, clientesCaptados:int, monto:float)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;lt;&amp;lt;ConsultasYComandos&amp;gt;&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="320" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-7" value="Empresa" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="210" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-8" value="- Empleados: list" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pg1PdgMVT-_aMi2HHLWd-7">
+          <mxGeometry y="26" width="210" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pg1PdgMVT-_aMi2HHLWd-7">
+          <mxGeometry y="52" width="210" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-10" value="+ Empresa (Empleados:none)&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ agregarEmpleado(empleado, &#39;Empleado&#39;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+eliminarEmpleado(empleado, &#39;Empleado&#39;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ consultarSalarios():float&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ masClientesCaptados():&#39;Empleado&#39;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pg1PdgMVT-_aMi2HHLWd-7">
+          <mxGeometry y="60" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-11" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.995;entryY=0.085;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="pg1PdgMVT-_aMi2HHLWd-2" target="pg1PdgMVT-_aMi2HHLWd-10">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="240" y="210" as="sourcePoint" />
+            <mxPoint x="400" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-12" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.367;entryY=1.029;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pg1PdgMVT-_aMi2HHLWd-5" target="pg1PdgMVT-_aMi2HHLWd-4">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="350" y="290" as="sourcePoint" />
+            <mxPoint x="510" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="448" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pg1PdgMVT-_aMi2HHLWd-13" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.658;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pg1PdgMVT-_aMi2HHLWd-6" target="pg1PdgMVT-_aMi2HHLWd-4">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="470" y="360" as="sourcePoint" />
+            <mxPoint x="518" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="518" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
