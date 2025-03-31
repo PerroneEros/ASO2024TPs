@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "socio_dni": 12345678,
+        "libro_isbn": 9781234567897,
+        "fecha_retiro": "2024-11-01",
+        "cant_dias": 14,
+        "fecha_devolucion": "2024-11-15"
+    },
+    {
+        "id": 2,
+        "socio_dni": 87654321,
+        "libro_isbn": 9789876543210,
+        "fecha_retiro": "2024-10-20",
+        "cant_dias": 30,
+        "fecha_devolucion": "2024-11-19"
+    },
+    {
+        "id": 3,
+        "socio_dni": 11223344,
+        "libro_isbn": 9781111111111,
+        "fecha_retiro": "2024-11-05",
+        "cant_dias": 7,
+        "fecha_devolucion": "2024-11-12"
+    }
+]

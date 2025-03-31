@@ -1,0 +1,37 @@
+[
+    {
+        "DNI": 12345678,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "mail": "juan.perez@example.com",
+        "fechaDeNacimiento": "1990-01-15"
+    },
+    {
+        "DNI": 87654321,
+        "nombre": "María",
+        "apellido": "González",
+        "mail": "maria.gonzalez@example.com",
+        "fechaDeNacimiento": "1985-03-22"
+    },
+    {
+        "DNI": 11223344,
+        "nombre": "Carlos",
+        "apellido": "López",
+        "mail": "carlos.lopez@example.com",
+        "fechaDeNacimiento": "1992-07-30"
+    },
+    {
+        "DNI": 55667788,
+        "nombre": "Ana",
+        "apellido": "Martínez",
+        "mail": "ana.martinez@example.com",
+        "fechaDeNacimiento": "1988-12-05"
+    },
+    {
+        "DNI": 99887766,
+        "nombre": "Luis",
+        "apellido": "Ramírez",
+        "mail": "luis.ramirez@example.com",
+        "fechaDeNacimiento": "1995-04-10"
+    }
+]

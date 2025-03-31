@@ -1,0 +1,37 @@
+[
+    {
+        "ISBN": 12345,
+        "titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez",
+        "genero": "Ficción",
+        "anio_publicacion": 1967
+    },
+    {
+        "ISBN": 54321,
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "genero": "Distopía",
+        "anio_publicacion": 1949
+    },
+    {
+        "ISBN": 67890,
+        "titulo": "El Alquimista",
+        "autor": "Paulo Coelho",
+        "genero": "Ficción",
+        "anio_publicacion": 1988
+    },
+    {
+        "ISBN": 10987,
+        "titulo": "Orgullo y prejuicio",
+        "autor": "Jane Austen",
+        "genero": "Romance",
+        "anio_publicacion": 1813
+    },
+    {
+        "ISBN": 12389,
+        "titulo": "El gran Gatsby",
+        "autor": "F. Scott Fitzgerald",
+        "genero": "Ficción",
+        "anio_publicacion": 1925
+    }
+]
