@@ -1,0 +1,56 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 OPR/113.0.0.0" version="24.7.16">
+  <diagram name="Página-1" id="akDacdGzH2qdyQ9W_4E4">
+    <mxGraphModel dx="793" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-19" value="Participante" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="20" width="220" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-26" value="&amp;lt;&amp;lt;Constructor&amp;gt;&amp;gt;&lt;div&gt;Participante(nombre:str, edad:int, nacionalidad:str, disciplina:&#39;Disciplina&#39;)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-28" value="&amp;lt;&amp;lt;Consultas&amp;gt;&amp;gt;&lt;div&gt;obtenerNombre():str&lt;/div&gt;&lt;div&gt;obtenerEdad():int&lt;/div&gt;&lt;div&gt;obtenerNacionalidad():str&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-29" value="&amp;lt;&amp;lt;Comandos&amp;gt;&amp;gt;&lt;div&gt;establecerNombre(nombre:&lt;span style=&quot;background-color: initial;&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;establecerEdad(edad: int)&lt;/div&gt;&lt;div&gt;establecerNacionalidad(nacionalidad:str)&lt;/div&gt;&lt;div&gt;Inscripcion(disciplina:&#39;Disciplina&#39;)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="310" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-25" value="&amp;lt;&amp;lt;Atributos de instancia&amp;gt;&amp;gt;&lt;div&gt;nombre:str&lt;/div&gt;&lt;div&gt;edad:int&lt;/div&gt;&lt;div&gt;nacionalidad:str&lt;/div&gt;&lt;div&gt;disciplinas:list(&#39;Disciplina&#39;)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-31" value="&amp;lt;&amp;lt;Atributos de instancia&amp;gt;&amp;gt;&lt;div&gt;nombre:str&lt;/div&gt;&lt;div&gt;descripcion:str&lt;/div&gt;&lt;div&gt;competidores:list(&#39;´Participante&#39;)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="390" y="70" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-32" value="&amp;lt;&amp;lt;Constructor&amp;gt;&amp;gt;&lt;div&gt;Disciplina(nombre:str,&lt;/div&gt;&lt;div&gt;participante:list(&#39;Participante))&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="390" y="140" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-33" value="&amp;lt;&amp;lt;Consultas&amp;gt;&amp;gt;&lt;div&gt;obtenerNombre():str&lt;/div&gt;&lt;div&gt;obtenerDescripcion():str&lt;/div&gt;&lt;div&gt;obtenerParticipante():Participante&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="390" y="200" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-34" value="&amp;lt;&amp;lt;Comandos&amp;gt;&amp;gt;&lt;div&gt;establecerNombre(nombre:str)&lt;/div&gt;&lt;div&gt;establecerDescripcion(descripcion:str)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="390" y="270" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-35" value="Disciplina" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="20" width="220" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-36" value="n" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.002;entryY=0.067;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SK4pSvDkuQjuux2kxXdu-25" target="SK4pSvDkuQjuux2kxXdu-35">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="330" y="200" as="sourcePoint" />
+            <mxPoint x="360" y="110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="330" y="70" />
+              <mxPoint x="330" y="41" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SK4pSvDkuQjuux2kxXdu-37" value="n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SK4pSvDkuQjuux2kxXdu-36">
+          <mxGeometry x="0.8778" relative="1" as="geometry">
+            <mxPoint x="-20" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

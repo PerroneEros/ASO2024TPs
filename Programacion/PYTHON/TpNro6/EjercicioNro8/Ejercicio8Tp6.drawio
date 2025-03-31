@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 OPR/113.0.0.0" version="24.7.17">
+  <diagram name="Página-1" id="ySr9I-10_5zfq8E8K8op">
+    <mxGraphModel dx="1515" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-1" value="Organizador" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="70" width="250" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-2" value="- nombre:str&lt;div&gt;-correo:str&lt;/div&gt;&lt;div&gt;-especialidad:str&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="kdKTRyPzzCHBXx3eJ9Ro-1">
+          <mxGeometry y="26" width="250" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="kdKTRyPzzCHBXx3eJ9Ro-1">
+          <mxGeometry y="90" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-4" value="+ Organizador (nombre:str, correo:str, especialidad,str)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ obtenerNombre(nombre:str)&lt;/div&gt;&lt;div&gt;+ obtenerCorreo(correo:str)&lt;/div&gt;&lt;div&gt;+ obtenerEspecialida(correo:str)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ establecerNombre(nombre:str)&lt;/div&gt;&lt;div&gt;+ establecerCorreo(correo:str)&lt;/div&gt;&lt;div&gt;+ establecerEspecialidad(especialidad:str)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="kdKTRyPzzCHBXx3eJ9Ro-1">
+          <mxGeometry y="98" width="250" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-5" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 120%;&quot;&gt;&lt;b&gt;Evento&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nombre:str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- fecha:&#39;Fecha&#39;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- descripcion:str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- participantes:list[&#39;Participante&#39;]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- organizadorAsignado:&#39;Organizador&#39;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Evento (nombre:str, fecha:&#39;Fecha&#39;, descripcion:str)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obtenerNombre():str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obtenerFecha():&#39;Fecha&#39;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obtenerDescripcion():str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obtenerParticipantesNombres():str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ establecerNombre(nombre ,str)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ establecerFecha(fecha,&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;&#39;Fecha&#39;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ establecerDescripcion(descripcion, str)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ anotarParticipantes(participante, &#39;Participante&#39;)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ asignarOrganizador(organizador,&#39;Organizador&#39;)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="310" y="40" width="270" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-6" value="Participantes" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="637" y="70" width="190" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-7" value="- nombre:str&lt;div&gt;- correo:str&lt;/div&gt;&lt;div&gt;- telefono:str&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="kdKTRyPzzCHBXx3eJ9Ro-6">
+          <mxGeometry y="26" width="190" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="kdKTRyPzzCHBXx3eJ9Ro-6">
+          <mxGeometry y="80" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-9" value="+ Participante(nombre:str, correo:str, telefono:str)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ obtenerNombre():str&lt;/div&gt;&lt;div&gt;+ obtenerCorreo():str&lt;/div&gt;&lt;div&gt;+obtenerTelefono():str&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;establecerNombre(nombre, str)&lt;/div&gt;&lt;div&gt;establecerCorreo(correo, str)&lt;/div&gt;&lt;div&gt;establecerTelefono(telefono, str)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="kdKTRyPzzCHBXx3eJ9Ro-6">
+          <mxGeometry y="88" width="190" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-10" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="kdKTRyPzzCHBXx3eJ9Ro-2" target="kdKTRyPzzCHBXx3eJ9Ro-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="100" as="sourcePoint" />
+            <mxPoint x="410" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-11" value="n" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="100" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-12" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="245" y="98" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-13" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="kdKTRyPzzCHBXx3eJ9Ro-7" target="kdKTRyPzzCHBXx3eJ9Ro-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="610" y="150" as="sourcePoint" />
+            <mxPoint x="640" y="98" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-14" value="n" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="607" y="120" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kdKTRyPzzCHBXx3eJ9Ro-15" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="577" y="98" width="30" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 OPR/113.0.0.0" version="24.7.17">
+  <diagram name="Página-1" id="ibAsR8l_fnDwftmIvHzk">
+    <mxGraphModel dx="558" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-1" value="Mascota" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="230" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-2" value="&lt;div&gt;&amp;lt;&amp;lt;Atributos de la instancia&amp;gt;&amp;gt;&lt;/div&gt;- nombre:str&lt;div&gt;-especie:str&lt;/div&gt;&lt;div&gt;-edad:int&lt;/div&gt;&lt;div&gt;-descripcion:str&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Dj0rcwLs0VO1zq7PT3Fj-1">
+          <mxGeometry y="26" width="230" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Dj0rcwLs0VO1zq7PT3Fj-1">
+          <mxGeometry y="110" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-4" value="&lt;div&gt;&amp;lt;&amp;lt;Constructor&amp;gt;&amp;gt;&lt;/div&gt;+ Mascota(nombre:str, especie:str, edad:int, descripcion:str)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;Comandos&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ establecerNombre(nombre:str)&lt;/div&gt;&lt;div&gt;+ establecerEspecie(especie:str)&lt;/div&gt;&lt;div&gt;+ establecerEdad(edad:int&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ establecerDescripcion(descripcion:str)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;lt;&amp;lt;Consultas&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerNombre():str&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerEspecie():str&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerEdad():int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerDescripcion():str&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Dj0rcwLs0VO1zq7PT3Fj-1">
+          <mxGeometry y="118" width="230" height="242" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-8" value="Cuidador" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="80" width="220" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-9" value="&amp;lt;&amp;lt;Atributos de la instancia&amp;gt;&amp;gt;&lt;div&gt;- nombre:str&lt;/div&gt;&lt;div&gt;- direccion:str&lt;/div&gt;&lt;div&gt;- telefono:str&lt;/div&gt;&lt;div&gt;- mascota:list(&#39;Mascota&#39;)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Dj0rcwLs0VO1zq7PT3Fj-8">
+          <mxGeometry y="26" width="220" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Dj0rcwLs0VO1zq7PT3Fj-8">
+          <mxGeometry y="110" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-11" value="&amp;lt;&amp;lt;Constructor&amp;gt;&amp;gt;&lt;div&gt;+ Cuidador(nombre:str,direccion:str,&lt;/div&gt;&lt;div&gt;telefono:str)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;Comandos&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ establecerNombre(nombre:str)&lt;/div&gt;&lt;div&gt;+ establecerDireccion(direccion:str)&lt;/div&gt;&lt;div&gt;+ establecerTelefono(telefono:str)&lt;/div&gt;&lt;div&gt;+ asignarMascota(mascota:&#39;Mascota&#39;)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;Consultas&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+ obtenerNombre():str&lt;/div&gt;&lt;div&gt;+ obtenerDireccion():str&lt;/div&gt;&lt;div&gt;+ obtenerTelefono():str&lt;/div&gt;&lt;div&gt;+ obtenerMascotas(): &#39;Mascota&#39;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Dj0rcwLs0VO1zq7PT3Fj-8">
+          <mxGeometry y="118" width="220" height="242" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-12" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Dj0rcwLs0VO1zq7PT3Fj-9" target="Dj0rcwLs0VO1zq7PT3Fj-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="330" y="250" as="sourcePoint" />
+            <mxPoint x="490" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-14" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="475" y="118" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Dj0rcwLs0VO1zq7PT3Fj-15" value="n" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="118" width="30" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
