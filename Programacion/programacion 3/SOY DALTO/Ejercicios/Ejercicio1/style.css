@@ -1,0 +1,27 @@
+body{
+    background: black;
+    font-family: arial;
+}
+.card{
+    background: coral;
+    padding: 20px 40px 20px 40px;
+    margin: 30px 30px 30px 30px;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    background: brown;
+}
+
+h2{
+    text-align: center;
+    background: red;
+    color: antiquewhite;
+    text-transform:lowercase;
+}
+
+p{
+    text-align:left;
+    
+}
