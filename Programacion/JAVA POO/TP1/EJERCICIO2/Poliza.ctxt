@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Poliza
+comment1.params=np
+comment1.target=Poliza(int)
+comment10.params=
+comment10.target=float\ obtenerRobo()
+comment11.params=
+comment11.target=float\ obtenerCostoPoliza()
+comment12.params=
+comment12.target=boolean\ estaActiva()
+comment2.params=np\ i\ r
+comment2.target=Poliza(int,\ float,\ float)
+comment3.params=m
+comment3.target=void\ establecerIncendio(float)
+comment4.params=m
+comment4.target=void\ establecerRobo(float)
+comment5.params=p
+comment5.target=void\ actualizarPorcentaje(int)
+comment6.params=
+comment6.target=void\ activar()
+comment7.params=
+comment7.target=void\ desactivar()
+comment8.params=
+comment8.target=int\ obtenerNroPoliza()
+comment9.params=
+comment9.target=float\ obtenerIncendio()
+numComments=13
