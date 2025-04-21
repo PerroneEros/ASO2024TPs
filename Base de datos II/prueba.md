@@ -265,6 +265,17 @@ Table Auditoria {
 ```
 
 ```sql
+CREATE TABLE Clientes (
+  id INT PRIMARY KEY,
+  nombre VARCHAR(50)
+);
+
+CREATE TABLE Auditoria (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  id_cliente INT,
+  accion VARCHAR(10),
+  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 -- Trigger para INSERT
 CREATE TRIGGER trg_insert_cliente
 AFTER INSERT ON Clientes
