@@ -2,8 +2,6 @@
 
 ## Ejercicio 1: Reglas de Integridad
 
-### Descripción:
-
 Se pide identificar posibles violaciones a la integridad referencial al eliminar un estudiante con cursos inscritos, y explicar mecanismos para evitarlo.
 
 ### Diagrama DBML:
@@ -57,8 +55,6 @@ DELETE FROM Estudiantes WHERE id = 1;
 
 ## Ejercicio 2: Implementación de Restricciones
 
-### Descripción:
-
 Crear la tabla Matriculas con clave foránea y forzar un error de integridad al insertar datos inválidos.
 
 ### Diagrama DBML:
@@ -103,8 +99,6 @@ INSERT INTO Matriculas (id, id_estudiante) VALUES (2, 99);
 
 ## Ejercicio 3: Concurrencia
 
-### Descripción:
-
 Simular una situación donde dos usuarios intentan modificar el mismo saldo de una cuenta bancaria, analizando READ COMMITTED vs SERIALIZABLE.
 
 ### Diagrama DBML:
@@ -145,8 +139,6 @@ Sin control: el último en escribir pisa el resultado anterior.
 
 ## Ejercicio 4: Plan de Ejecución
 
-### Descripción:
-
 Comparar el rendimiento de una consulta con y sin índices usando EXPLAIN.
 
 ### Diagrama DBML:
@@ -184,8 +176,6 @@ La segunda consulta debería tener mejor rendimiento (menos filas examinadas).
 
 ## Ejercicio 5: Creación de Índices
 
-### Descripción:
-
 Diseñar una consulta con filtros múltiples y crear diferentes índices para comparar.
 
 ### Diagrama DBML:
@@ -208,8 +198,6 @@ Usar `EXPLAIN` para ver cuál índice mejora el plan de ejecución.
 ---
 
 ## Ejercicio 6: Vistas
-
-### Descripción:
 
 Crear una vista que resuma las ventas mensuales por producto y usarla para obtener los 5 productos más vendidos.
 
@@ -241,8 +229,6 @@ LIMIT 5;
 
 ## Ejercicio 7: Gestión de Permisos
 
-### Descripción:
-
 Crear un usuario analista con permisos limitados y probar su acceso.
 
 ```sql
@@ -260,8 +246,6 @@ GRANT SELECT ON universidad.* TO 'analista'@'localhost';
 ---
 
 ## Ejercicio 8: Seguridad y Auditoría
-
-### Descripción:
 
 Usar triggers para auditar cambios en una tabla Clientes.
 
@@ -297,8 +281,6 @@ INSERT INTO Auditoria (id_cliente, accion) VALUES (NEW.id, 'UPDATE');
 ---
 
 ## Ejercicio 9: Backup y Restore
-
-### Descripción:
 
 Explicar cómo hacer un backup completo y restaurarlo.
 
