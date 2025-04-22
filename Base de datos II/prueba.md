@@ -70,8 +70,6 @@ Table Matriculas {
 }
 ```
 
-### Script:
-
 ```sql
 CREATE TABLE Estudiantes (
   id INT PRIMARY KEY,
