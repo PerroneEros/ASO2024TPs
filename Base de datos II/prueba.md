@@ -315,6 +315,5 @@ mysql -u usuario -p basededatos < backup.sql
 DROP TABLE Clientes;
 -- Restaurar usando el archivo backup.sql
 ```
-
 ---
 
