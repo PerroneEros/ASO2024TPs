@@ -1,0 +1,14 @@
+use("empresa");
+
+db.empleados.updateMany(
+    {}, // se actualiza todos 
+    {
+        $set: {
+            "direccion":{
+                "calle": "calle777",
+                "ciudad": "Bahia Blanca",
+                "codigo_postal": 8000
+            }
+        }
+    }
+);

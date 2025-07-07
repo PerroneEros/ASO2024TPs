@@ -1,0 +1,13 @@
+  use empresa;  
+  db.createUser({
+  user: "lautaroAc",
+  pwd: "12345678",        (datos de ej )
+  roles: [
+      { role: "readWrite", db: "empresa" }
+  ]
+  });
+
+
+mongodump --db empresa --out /ruta/a/backup 
+
+mongorestore --db empresa /ruta/a/backup/empresa

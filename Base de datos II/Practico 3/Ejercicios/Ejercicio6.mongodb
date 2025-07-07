@@ -1,0 +1,52 @@
+//ejercicio 6
+//Agrupar las ventas por mes y calcular el total vendido en cada mes.
+db.ventas.aggregate([
+  //creo un campo mes para sacarle el mes de la venta
+  {
+    $project: {
+      mes: {
+        $dateToString: { format: "%m", date: "$fecha" },
+      },
+      total: 1,
+    },
+  },
+  //agrupo las ventas por el mes
+  {
+    $group: {
+      _id: "$mes",
+      totalVendidoCadaMes: { $sum: "$total" },
+    },
+  },
+  //ordeno por el numero del mes 
+  {
+    $sort: { _id: 1 },
+  },
+]);
+
+//Encontrar el día de la semana con más ventas.
+db.ventas.aggregate([
+  //creo un campo dia para sacarle el dia de la venta
+  {
+    $project: {
+      dia: {
+        $dateToString: { format: "%d", date: "$fecha" },
+      },
+      total: 1,
+    },
+  },
+  //agrupo las ventas por el dia
+  {
+    $group: {
+      _id: "$dia",
+      totalVentasDia: { $sum: "$total" },
+    },
+  },
+  //ordeno los dias de mayor a menor 
+  {
+    $sort: { totalVentasDia: -1 },
+  },
+  //lo limito en uno para mostrar el dia con mas ventas
+  {
+    $limit: 1,
+  },
+]);

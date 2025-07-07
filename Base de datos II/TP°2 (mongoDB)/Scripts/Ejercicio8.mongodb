@@ -1,0 +1,30 @@
+//Ejercicio 8: Uso de $lookup Realiza una agregación donde se combinen los datos de alumnos y cursos usando $lookup.
+
+db.alumnos.aggregate([
+  {
+    $unwind: "$cursos",
+  },
+  {
+    $lookup: {
+      from: "cursos",
+      localField: "cursos.curso",
+      foreignField: "_id",
+      as: "informacionDelCurso",
+    },
+  },
+  {
+    $unwind: "$informacionDelCurso",
+  },
+  {
+    $project: {
+      _id: 0,
+      nombreDelAlumno: "$nombre",
+      apellidoDelAlumno: "$apellido",
+      curso: "$informacionDelCurso.nombre",
+      profesor: "$informacionDelCurso.profesor",
+      estado: "$cursos.estado",
+      nota: "$cursos.nota",
+    },
+  },
+]);
+

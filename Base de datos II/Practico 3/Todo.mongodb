@@ -1,0 +1,930 @@
+use("TiendaOnline");
+
+db.productos.insertMany([
+  {
+    _id: 1,
+    nombre: "Laptop Pro X",
+    categoria: "Electrónica",
+    precio: 1200.0,
+    stock: 15,
+    características: ["8GB RAM", "256GB SSD", "Intel i5"],
+    valoraciones: [
+      { usuario: "user123", puntuacion: 4, comentario: "Muy buen producto" },
+      { usuario: "user456", puntuacion: 5, comentario: "Excelente calidad" },
+      {
+        usuario: "user789",
+        puntuacion: 3,
+        comentario: "Precio elevado para lo que ofrece",
+      },
+    ],
+    proveedor: { nombre: "TechSupplies", pais: "Estados Unidos" },
+    fecha_ingreso: new Date("2023-01-15"),
+  },
+  {
+    _id: 2,
+    nombre: "Smartphone Galaxy",
+    categoria: "Electrónica",
+    precio: 800.0,
+    stock: 25,
+    características: ["6GB RAM", "128GB Almacenamiento", "Cámara 48MP"],
+    valoraciones: [
+      { usuario: "user111", puntuacion: 5, comentario: "Increíble teléfono" },
+      { usuario: "user222", puntuacion: 4, comentario: "Buena cámara" },
+    ],
+    proveedor: { nombre: "MobileWorld", pais: "Corea del Sur" },
+    fecha_ingreso: new Date("2023-02-10"),
+  },
+  {
+    _id: 3,
+    nombre: "Auriculares Inalámbricos",
+    categoria: "Accesorios",
+    precio: 120.0,
+    stock: 50,
+    características: ["Bluetooth 5.0", "Cancelación de ruido", "20h batería"],
+    valoraciones: [
+      { usuario: "user333", puntuacion: 4, comentario: "Buen sonido" },
+      {
+        usuario: "user444",
+        puntuacion: 3,
+        comentario: "La batería dura menos de lo anunciado",
+      },
+      {
+        usuario: "user555",
+        puntuacion: 5,
+        comentario: "Excelente calidad de sonido",
+      },
+    ],
+    proveedor: { nombre: "AudioTech", pais: "Japón" },
+    fecha_ingreso: new Date("2023-03-05"),
+  },
+  {
+    _id: 4,
+    nombre: "Monitor UltraWide",
+    categoria: "Electrónica",
+    precio: 350.0,
+    stock: 10,
+    características: ["34 pulgadas", "3440x1440", "HDR"],
+    valoraciones: [
+      {
+        usuario: "user666",
+        puntuacion: 5,
+        comentario: "Increíble para trabajar",
+      },
+      { usuario: "user777", puntuacion: 5, comentario: "Perfecto para gaming" },
+    ],
+    proveedor: { nombre: "ScreenMasters", pais: "Taiwán" },
+    fecha_ingreso: new Date("2023-01-20"),
+  },
+  {
+    _id: 5,
+    nombre: "Teclado Mecánico RGB",
+    categoria: "Accesorios",
+    precio: 90.0,
+    stock: 30,
+    características: [
+      "Switches Cherry MX",
+      "Retroiluminación RGB",
+      "Teclas programables",
+    ],
+    valoraciones: [
+      {
+        usuario: "user888",
+        puntuacion: 4,
+        comentario: "Buen teclado para gaming",
+      },
+      { usuario: "user999", puntuacion: 3, comentario: "Un poco ruidoso" },
+    ],
+    proveedor: { nombre: "GamerGear", pais: "Estados Unidos" },
+    fecha_ingreso: new Date("2023-02-25"),
+  },
+  {
+    _id: 6,
+    nombre: "Tablet Pro",
+    categoria: "Electrónica",
+    precio: 450.0,
+    stock: 20,
+    características: ["10 pulgadas", "128GB Almacenamiento", "Procesador A14"],
+    valoraciones: [
+      {
+        usuario: "user101",
+        puntuacion: 5,
+        comentario: "Perfecta para dibujar",
+      },
+      {
+        usuario: "user102",
+        puntuacion: 4,
+        comentario: "Buena relación calidad-precio",
+      },
+      { usuario: "user103", puntuacion: 5, comentario: "Muy potente" },
+    ],
+    proveedor: { nombre: "TechSupplies", pais: "Estados Unidos" },
+    fecha_ingreso: new Date("2023-03-15"),
+  },
+  {
+    _id: 7,
+    nombre: "Mouse Gaming",
+    categoria: "Accesorios",
+    precio: 60.0,
+    stock: 40,
+    características: ["12000 DPI", "RGB", "7 botones programables"],
+    valoraciones: [
+      { usuario: "user104", puntuacion: 4, comentario: "Muy preciso" },
+      {
+        usuario: "user105",
+        puntuacion: 5,
+        comentario: "Cómodo para sesiones largas",
+      },
+    ],
+    proveedor: { nombre: "GamerGear", pais: "Estados Unidos" },
+    fecha_ingreso: new Date("2023-02-15"),
+  },
+  {
+    _id: 8,
+    nombre: "Impresora Láser",
+    categoria: "Oficina",
+    precio: 200.0,
+    stock: 15,
+    características: ["Monocromática", "Duplex", "WiFi"],
+    valoraciones: [
+      { usuario: "user106", puntuacion: 3, comentario: "Consume mucho tóner" },
+      { usuario: "user107", puntuacion: 4, comentario: "Rápida impresión" },
+    ],
+    proveedor: { nombre: "OfficeSupply", pais: "China" },
+    fecha_ingreso: new Date("2023-01-25"),
+  },
+  {
+    _id: 9,
+    nombre: "Webcam HD",
+    categoria: "Accesorios",
+    precio: 80.0,
+    stock: 25,
+    características: ["1080p", "Micrófono integrado", "Corrección de luz"],
+    valoraciones: [
+      {
+        usuario: "user108",
+        puntuacion: 4,
+        comentario: "Buena calidad de imagen",
+      },
+      {
+        usuario: "user109",
+        puntuacion: 5,
+        comentario: "Excelente para videoconferencias",
+      },
+      {
+        usuario: "user110",
+        puntuacion: 3,
+        comentario: "El micrófono podría ser mejor",
+      },
+    ],
+    proveedor: { nombre: "VideoTech", pais: "Taiwán" },
+    fecha_ingreso: new Date("2023-02-05"),
+  },
+  {
+    _id: 10,
+    nombre: "Disco Duro Externo",
+    categoria: "Almacenamiento",
+    precio: 110.0,
+    stock: 30,
+    características: ["2TB", "USB 3.0", "Compacto"],
+    valoraciones: [
+      { usuario: "user111", puntuacion: 4, comentario: "Buena capacidad" },
+      { usuario: "user112", puntuacion: 5, comentario: "Rápido y fiable" },
+    ],
+    proveedor: { nombre: "StoragePro", pais: "Japón" },
+    fecha_ingreso: new Date("2023-03-20"),
+  },
+]);
+
+db.ventas.insertMany([
+  {
+    _id: 101,
+    producto_id: 1,
+    cliente: {
+      nombre: "Ana Martínez",
+      email: "ana@example.com",
+      pais: "España",
+    },
+    cantidad: 1,
+    precio_unitario: 1200.0,
+    total: 1200.0,
+    fecha: new Date("2023-03-15"),
+    estado: "Entregado",
+    metodo_pago: "Tarjeta de crédito",
+  },
+  {
+    _id: 102,
+    producto_id: 3,
+    cliente: {
+      nombre: "Carlos López",
+      email: "carlos@example.com",
+      pais: "México",
+    },
+    cantidad: 2,
+    precio_unitario: 120.0,
+    total: 240.0,
+    fecha: new Date("2023-03-16"),
+    estado: "Entregado",
+    metodo_pago: "PayPal",
+  },
+  {
+    _id: 103,
+    producto_id: 5,
+    cliente: {
+      nombre: "María González",
+      email: "maria@example.com",
+      pais: "Argentina",
+    },
+    cantidad: 1,
+    precio_unitario: 90.0,
+    total: 90.0,
+    fecha: new Date("2023-03-17"),
+    estado: "En tránsito",
+    metodo_pago: "Transferencia bancaria",
+  },
+  {
+    _id: 104,
+    producto_id: 2,
+    cliente: {
+      nombre: "Juan Pérez",
+      email: "juan@example.com",
+      pais: "Colombia",
+    },
+    cantidad: 1,
+    precio_unitario: 800.0,
+    total: 800.0,
+    fecha: new Date("2023-03-18"),
+    estado: "Procesando",
+    metodo_pago: "Tarjeta de crédito",
+  },
+  {
+    _id: 105,
+    producto_id: 7,
+    cliente: {
+      nombre: "Ana Martínez",
+      email: "ana@example.com",
+      pais: "España",
+    },
+    cantidad: 1,
+    precio_unitario: 60.0,
+    total: 60.0,
+    fecha: new Date("2023-03-19"),
+    estado: "Entregado",
+    metodo_pago: "PayPal",
+  },
+  {
+    _id: 106,
+    producto_id: 10,
+    cliente: {
+      nombre: "Roberto Sánchez",
+      email: "roberto@example.com",
+      pais: "Chile",
+    },
+    cantidad: 2,
+    precio_unitario: 110.0,
+    total: 220.0,
+    fecha: new Date("2023-03-20"),
+    estado: "Entregado",
+    metodo_pago: "Tarjeta de crédito",
+  },
+  {
+    _id: 107,
+    producto_id: 4,
+    cliente: {
+      nombre: "Laura García",
+      email: "laura@example.com",
+      pais: "España",
+    },
+    cantidad: 1,
+    precio_unitario: 350.0,
+    total: 350.0,
+    fecha: new Date("2023-03-21"),
+    estado: "En tránsito",
+    metodo_pago: "Transferencia bancaria",
+  },
+  {
+    _id: 108,
+    producto_id: 6,
+    cliente: {
+      nombre: "Carlos López",
+      email: "carlos@example.com",
+      pais: "México",
+    },
+    cantidad: 1,
+    precio_unitario: 450.0,
+    total: 450.0,
+    fecha: new Date("2023-03-22"),
+    estado: "Procesando",
+    metodo_pago: "PayPal",
+  },
+  {
+    _id: 109,
+    producto_id: 9,
+    cliente: {
+      nombre: "Elena Rodríguez",
+      email: "elena@example.com",
+      pais: "Argentina",
+    },
+    cantidad: 3,
+    precio_unitario: 80.0,
+    total: 240.0,
+    fecha: new Date("2023-03-23"),
+    estado: "Entregado",
+    metodo_pago: "Tarjeta de crédito",
+  },
+  {
+    _id: 110,
+    producto_id: 8,
+    cliente: {
+      nombre: "Miguel Fernández",
+      email: "miguel@example.com",
+      pais: "Colombia",
+    },
+    cantidad: 1,
+    precio_unitario: 200.0,
+    total: 200.0,
+    fecha: new Date("2023-03-24"),
+    estado: "Entregado",
+    metodo_pago: "Transferencia bancaria",
+  },
+  {
+    _id: 111,
+    producto_id: 2,
+    cliente: {
+      nombre: "Pedro Díaz",
+      email: "pedro@example.com",
+      pais: "España",
+    },
+    cantidad: 1,
+    precio_unitario: 800.0,
+    total: 800.0,
+    fecha: new Date("2023-03-25"),
+    estado: "Procesando",
+    metodo_pago: "Tarjeta de crédito",
+  },
+  {
+    _id: 112,
+    producto_id: 1,
+    cliente: {
+      nombre: "Ana Martínez",
+      email: "ana@example.com",
+      pais: "España",
+    },
+    cantidad: 1,
+    precio_unitario: 1200.0,
+    total: 1200.0,
+    fecha: new Date("2023-03-26"),
+    estado: "En tránsito",
+    metodo_pago: "PayPal",
+  },
+  {
+    _id: 113,
+    producto_id: 5,
+    cliente: {
+      nombre: "Carlos López",
+      email: "carlos@example.com",
+      pais: "México",
+    },
+    cantidad: 2,
+    precio_unitario: 90.0,
+    total: 180.0,
+    fecha: new Date("2023-03-27"),
+    estado: "Entregado",
+    metodo_pago: "Tarjeta de crédito",
+  },
+  {
+    _id: 114,
+    producto_id: 3,
+    cliente: {
+      nombre: "Sofía Torres",
+      email: "sofia@example.com",
+      pais: "Chile",
+    },
+    cantidad: 1,
+    precio_unitario: 120.0,
+    total: 120.0,
+    fecha: new Date("2023-03-28"),
+    estado: "Entregado",
+    metodo_pago: "Transferencia bancaria",
+  },
+  {
+    _id: 115,
+    producto_id: 7,
+    cliente: {
+      nombre: "Juan Pérez",
+      email: "juan@example.com",
+      pais: "Colombia",
+    },
+    cantidad: 1,
+    precio_unitario: 60.0,
+    total: 60.0,
+    fecha: new Date("2023-03-29"),
+    estado: "Procesando",
+    metodo_pago: "PayPal",
+  },
+]);
+
+//Ejercicio 1
+//Encontrar todos los productos de la categoría "Electrónica" con un precio superior a 500.
+db.productos.aggregate([
+  { $match: { categoria: "Electrónica", precio: { $gt: 500 } } },
+]);
+
+//Encontrar todas las ventas realizadas a clientes de "España" que tengan estado "Entregado".
+db.ventas.aggregate([
+  {
+    $match: {
+      "cliente.pais": "España",
+      estado: "Entregado",
+    },
+  },
+]);
+
+//Ejercicio 2
+//Calcular el precio promedio, máximo y mínimo por categoría de producto.
+db.productos.aggregate([
+  {
+    $group: {
+      _id: "$categoria",
+      suma: { $sum: "$precio" },
+      promedio: { $avg: "$precio" },
+      maxPrecioProducto: { $max: "$precio" },
+      minPrecioProducto: { $min: "$precio" },
+    },
+  },
+  { $sort: { promedio: -1 } }, //ordena de mayor a menor
+]);
+
+//Obtener el total de ventas por país del cliente, incluyendo la cantidad de transacciones y el monto total.
+db.ventas.aggregate([
+  {
+    $group: {
+      _id: "$cliente.pais",
+      cantidadTransacciones: { $sum: "$cantidad" },
+      montoTotal: { $sum: { $multiply: ["$cantidad", "$precio_unitario"] } }, //el multiply espera un array no se puede poner un {}
+      totalVentas: { $sum: "$total" }, //se puede usar cualquiera de las dos que dan el mimso resultado
+    },
+  },
+]);
+
+//Ejercicio 3
+//Crear una proyección de productos que incluya solo el nombre, precio, y una nueva propiedad llamada "precioConImpuesto" que sea el precio + 21% de IVA.
+db.productos.aggregate([
+  {
+    $project: {
+      _id: 0,
+      nombre: 1,
+      precio: 1,
+      precioConImpuesto: {
+        $add: ["$precio", { $multiply: ["$precio", 0.21] }],
+      }, //lo que hace el add es sumar el precio base osea (precio + precio * 0.21)
+    },
+  },
+]);
+//Para la colección de ventas, crear una proyección que incluya el ID de venta, el nombre del cliente, el total y una nueva propiedad "descuento" que sea el 10% del total.
+db.ventas.aggregate([
+  {
+    $project: {
+      _id: 1,
+      nombreCliente: "$cliente.nombre",
+      total: 1,
+      descuento: { $subtract: ["$total", { $multiply: ["$total", 0.1] }] }, // el subtract es como el add pero en la resta
+    },
+  },
+]);
+
+//Ejercicio 4
+//Deconstruir el array de valoraciones de productos para obtener una lista plana donde cada documento contenga una valoración individual.
+db.productos.aggregate([{ $unwind: "$valoraciones" }]);
+//Luego, agrupar por puntuación y contar cuántas valoraciones hay de cada puntuación.
+db.productos.aggregate([
+  {
+    $unwind: "$valoraciones",
+  },
+  {
+    $group: {
+      _id: "$valoraciones.puntuacion",
+      cantidadDeValoraciones: { $sum: 1 },
+    },
+  },
+]);
+
+//Ejercicio 5
+//Enriquecer cada documento de ventas con la información completa del producto vendido (mediante un lookup a la colección productos).
+db.ventas.aggregate([
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "informacionCompletaProductoVendido",
+    },
+  },
+]);
+
+//Calcular el total vendido por categoría de producto.
+db.ventas.aggregate([
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "informacionCompletaProductoVendido",
+    },
+  },
+  {
+    $unwind: "$informacionCompletaProductoVendido",
+  },
+  {
+    $group: {
+      _id: "$informacionCompletaProductoVendido.categoria",
+      totalVendidoPorCategoria: {
+        $sum: {
+          $multiply: [
+            "$cantidad",
+            "$informacionCompletaProductoVendido.precio",
+          ],
+        },
+      },
+    },
+  },
+  {
+    $sort: { totalVendidoPorCategoria: -1 },
+  },
+]);
+
+//ejercicio 6
+//Agrupar las ventas por mes y calcular el total vendido en cada mes.
+db.ventas.aggregate([
+  {
+    $project: {
+      mes: {
+        $dateToString: { format: "%m", date: "$fecha" },
+      },
+      total: 1,
+    },
+  },
+  {
+    $group: {
+      _id: "$mes",
+      totalVendidoCadaMes: { $sum: "$total" },
+    },
+  },
+  {
+    $sort: { _id: 1 },
+  },
+]);
+
+//Encontrar el día de la semana con más ventas.
+db.ventas.aggregate([
+  {
+    $project: {
+      dia: {
+        $dateToString: { format: "%d", date: "$fecha" },
+      },
+      total: 1,
+    },
+  },
+  {
+    $group: {
+      _id: "$dia",
+      totalVentasDia: { $sum: "$total" },
+    },
+  },
+  {
+    $sort: { totalVentasDia: -1 },
+  },
+  {
+    $limit: 1,
+  },
+]);
+
+//Ejercicio 7
+//Clasificar los productos según su precio: "Económico" (<100), "Estándar" (100-500), "Premium" (>500).
+db.productos.aggregate([
+  {
+    $project: {
+      nombre: 1,
+      precio: 1,
+      categoriaPrecio: {
+        $switch: {
+          branches: [
+            {
+              case: { $lt: ["$precio", 100] },
+              then: "Económico",
+            },
+            {
+              case: {
+                $and: [{ $gte: ["$precio", 100] }, { $lte: ["$precio", 500] }],
+              },
+              then: "Estándar",
+            },
+            {
+              case: { $gt: ["$precio", 500] },
+              then: "Premium",
+            },
+          ],
+          default: "no tiene categoría",
+        },
+      },
+    },
+  },
+]);
+//Clasificar las ventas según su total: "Pequeña" (<200), "Mediana" (200-800), "Grande" (>800).
+db.ventas.aggregate([
+  {
+    $project: {
+      _id: 1,
+      total: 1,
+      categoriaDeVenta: {
+        $switch: {
+          branches: [
+            {
+              case: { $lt: ["$total", 200] },
+              then: "Pequeña",
+            },
+            {
+              case: {
+                $and: [{ $gte: ["$total", 200] }, { $lte: ["$total", 800] }],
+              },
+              then: "Mediana",
+            },
+            {
+              case: { $gt: ["$total", 800] },
+              then: "Grande",
+            },
+          ],
+          default: "no tiene categoria",
+        },
+      },
+    },
+  },
+]);
+
+//Ejercicio 8
+//Obtener un informe de ventas que incluya:
+//                               -Top 3 productos más vendidos (por cantidad)
+//                               -Para cada producto: nombre, categoría, total de unidades vendidas, monto total generado
+//                               -Puntuación promedio en valoraciones
+
+db.ventas.aggregate([
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "informacionCompletaProductoVendido",
+    },
+  },
+  {
+    $unwind: "$informacionCompletaProductoVendido",
+  },
+  {
+    $unwind: "$informacionCompletaProductoVendido.valoraciones",
+  },
+  {
+    $group: {
+      _id: {
+        id: "$informacionCompletaProductoVendido._id",
+        nombre: "$informacionCompletaProductoVendido.nombre",
+        categoria: "$informacionCompletaProductoVendido.categoria",
+      },
+      productoMasVendido: { $sum: "$cantidad" },
+      montoTotal: {
+        $sum: {
+          $multiply: [
+            "$cantidad",
+            "$informacionCompletaProductoVendido.precio",
+          ],
+        },
+      },
+      promedio: {
+        $avg: "$informacionCompletaProductoVendido.valoraciones.puntuacion",
+      },
+    },
+  },
+  {
+    $sort: { productoMasVendido: -1 },
+  },
+  {
+    $limit: 3,
+  },
+]);
+
+//------------------------------ACTIVIDADES DE ENTREGA------------------------------
+//Problema 1
+//Crear un pipeline que obtenga los productos más valorados (puntuación promedio más alta) con al menos 2 valoraciones.
+
+db.productos.aggregate([
+  //Desarmo el arreglo de valoraciones en muchos documentos, seria un documento por valoracion
+  {
+    $unwind: "$valoraciones",
+  },
+
+  //agrupo por id del producto y depsues calculo el promedo de puntuacion y cantidad de valoraciones
+  {
+    $group: {
+      _id: "$_id",
+      promedioDePuntuacion: { $avg: "$valoraciones.puntuacion" },
+      cantidadDeValoraciones: { $sum: 1 },
+    },
+  },
+
+  //filtro por los productos que al menos tengan 2 valoraciones
+  {
+    $match: { cantidadDeValoraciones: { $gte: 2 } },
+  },
+
+  //ordeno los productos de mayor a menor puntuacion promedio para que queden las de mayor puntuacion arriba
+  {
+    $sort: { promedioDePuntuacion: -1 },
+  },
+]);
+
+//Problema 2
+//Crear un pipeline que obtenga las ventas totales por mes, indicando también el producto más vendido de cada mes.
+
+db.ventas.aggregate([
+  //Uno ventas con productos para acceder al precio y nombre del producto
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "producto",
+    },
+  },
+
+  //Desarmo el arreglo producto para acceder a los campos directamente
+  {
+    $unwind: "$producto",
+  },
+
+  //Proyecto el mes , producto_id, cantidad y calculo el total de la vneta
+  {
+    $project: {
+      mes: { $dateToString: { format: "%Y-%m", date: "$fecha" } },
+      producto_id: 1,
+      cantidad: 1,
+      total: { $multiply: ["$cantidad", "$producto.precio"] },
+    },
+  },
+
+  //Agrupo por mes y producto sumando totales y cantidades vendidas
+  {
+    $group: {
+      _id: { mes: "$mes", producto: "$producto_id" },
+      totalVentasProducto: { $sum: "$total" },
+      cantidadVendida: { $sum: "$cantidad" },
+    },
+  },
+
+  //Ordeno por mes y cantidad vendida para preparar el otro grupo
+  {
+    $sort: {
+      "_id.mes": 1,
+      cantidadVendida: -1,
+    },
+  },
+
+  //Por cada mes:sumo todas las ventas y selecciono el producto más vendido y la cantidad
+  {
+    $group: {
+      _id: "$_id.mes",
+      totalVentasMes: { $sum: "$totalVentasProducto" },
+      productoMasVendido: { $first: "$_id.producto" },
+      cantidad: { $first: "$cantidadVendida" },
+    },
+  },
+
+  //Ordeno por mes
+  { $sort: { _id: 1 } },
+
+  //Traigo los datos completos del producto más vendido para mostrar
+  {
+    $lookup: {
+      from: "productos",
+      localField: "productoMasVendido",
+      foreignField: "_id",
+      as: "producto",
+    },
+  },
+
+  //Accedo a los datos del producto
+  { $unwind: "$producto" },
+
+  //Proyecto el resultado final
+  {
+    $project: {
+      _id: 1,
+      totalVentasMes: 1,
+      productoMasVendido: "$producto.nombre",
+      cantidad: 1,
+    },
+  },
+]);
+
+//Problema 3
+//Crear un informe de clientes que incluya:
+//  -Total gastado por cada cliente
+//  -Número de compras realizadas
+//  -Producto favorito (el que más ha comprado)
+//  -Categoría preferida (donde más ha gastado)
+//  -Fecha de primera y última compra
+//-----------------------NO ANDA-----------------------------------------------
+db.ventas.aggregate([
+  //Uno con productos
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "producto",
+    },
+  },
+  { $unwind: "$producto" },
+
+  //Calculo el total y proyecto algunos datos
+  {
+    $project: {
+      cliente_id: 1,
+      producto_id: 1,
+      producto_nombre: "$producto.nombre",
+      categoria: "$producto.categoria",
+      cantidad: 1,
+      total: { $multiply: ["$cantidad", "$producto.precio"] },
+      fecha: 1,
+    },
+  },
+
+  //Agrupo por cliente, producto y categoría
+  {
+    $group: {
+      _id: {
+        cliente: "$cliente_id",
+        producto: "$producto_nombre",
+        categoria: "$categoria",
+      },
+      totalGastado: { $sum: "$total" },
+      cantidadComprada: { $sum: "$cantidad" },
+      compras: { $sum: 1 },
+      primeraCompra: { $min: "$fecha" },
+      ultimaCompra: { $max: "$fecha" },
+    },
+  },
+
+  //Ordeno para que el primer grupo por cliente tenga el producto mas comprado y la categoria con mas gasto
+  {
+    $sort: {
+      "_id.cliente": 1,
+      cantidadComprada: -1, // producto favorito
+      totalGastado: -1, //categoría preferida
+    },
+  },
+
+  //Agrupo por cliente y tomamos el primer producto/categoria
+  {
+    $group: {
+      _id: "$_id.cliente",
+      totalGastado: { $sum: "$totalGastado" },
+      totalCompras: { $sum: "$compras" },
+      productoFavorito: { $first: "$_id.producto" },
+      categoriaPreferida: { $first: "$_id.categoria" },
+      primeraCompra: { $min: "$primeraCompra" },
+      ultimaCompra: { $max: "$ultimaCompra" },
+    },
+  },
+
+  //Uno con clientes para obtener el nombre
+  {
+    $lookup: {
+      from: "clientes",
+      localField: "_id",
+      foreignField: "_id",
+      as: "cliente",
+    },
+  },
+  
+  //Desarmo el arreglo
+  { $unwind: "$cliente" },
+
+  //Proyecto resultado final
+  {
+    $project: {
+      _id: 0,
+      cliente: "$cliente.nombre",
+      totalGastado: 1,
+      totalCompras: 1,
+      productoFavorito: 1,
+      categoriaPreferida: 1,
+      primeraCompra: 1,
+      ultimaCompra: 1,
+    },
+  },
+]);
+
+//Problema 4
+//Crear un sistema de recomendación básico que, para un cliente dado, recomiende productos basándose en:
+// -Productos de la misma categoría que ha comprado anteriormente
+// -Productos populares (más vendidos) que no ha comprado aún
+// -Productos mejor valorados en las categorías de su interés
+

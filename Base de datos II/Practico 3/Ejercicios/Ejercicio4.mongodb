@@ -1,0 +1,17 @@
+//Ejercicio 4
+//Deconstruir el array de valoraciones de productos para obtener una lista plana donde cada documento contenga una valoración individual.
+db.productos.aggregate([{ $unwind: "$valoraciones" }]);
+//Luego, agrupar por puntuación y contar cuántas valoraciones hay de cada puntuación.
+db.productos.aggregate([
+  //desarmo el arreglo de valoraciones
+  {
+    $unwind: "$valoraciones",
+  },
+  //agrupo todas las valoraciones por su puntuación y cuento cuantas valoraciones hay
+  {
+    $group: {
+      _id: "$valoraciones.puntuacion",
+      cantidadDeValoraciones: { $sum: 1 },
+    },
+  },
+]);

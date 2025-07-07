@@ -1,0 +1,65 @@
+
+//Ejercicio 7
+//Clasificar los productos según su precio: "Económico" (<100), "Estándar" (100-500), "Premium" (>500).
+db.productos.aggregate([
+  //Se proyecto nombre, precio y una nueva categoria
+  //La categoria se asigna segun el precio usando el  $switch
+  {
+    $project: {
+      nombre: 1,
+      precio: 1,
+      categoriaPrecio: {
+        $switch: {
+          branches: [
+            {
+              case: { $lt: ["$precio", 100] },
+              then: "Económico",
+            },
+            {
+              case: {
+                $and: [{ $gte: ["$precio", 100] }, { $lte: ["$precio", 500] }],
+              },
+              then: "Estándar",
+            },
+            {
+              case: { $gt: ["$precio", 500] },
+              then: "Premium",
+            },
+          ],
+          default: "no tiene categoría",
+        },
+      },
+    },
+  },
+]);
+//Clasificar las ventas según su total: "Pequeña" (<200), "Mediana" (200-800), "Grande" (>800)
+db.ventas.aggregate([
+  //Proyecyo el ID, total y una nueva categoría y uso el $switch para clasificar por rangos
+  {
+    $project: {
+      _id: 1,
+      total: 1,
+      categoriaDeVenta: {
+        $switch: {
+          branches: [
+            {
+              case: { $lt: ["$total", 200] },
+              then: "Pequeña",
+            },
+            {
+              case: {
+                $and: [{ $gte: ["$total", 200] }, { $lte: ["$total", 800] }],
+              },
+              then: "Mediana",
+            },
+            {
+              case: { $gt: ["$total", 800] },
+              then: "Grande",
+            },
+          ],
+          default: "no tiene categoria",
+        },
+      },
+    },
+  },
+]);

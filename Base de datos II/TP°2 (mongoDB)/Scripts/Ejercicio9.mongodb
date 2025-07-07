@@ -1,0 +1,13 @@
+/*
+
+Ventajas de usar Replica Set:
+- Alta disponibilidad: Si el servidor principal falla, otro servidor puede reemplazarlo automáticamente.
+- Seguridad de datos: Al tener múltiples copias de los datos, el riesgo de pérdida de información se reduce significativamente.
+- Lectura distribuida: Se puede distribuir la carga de lectura entre las réplicas secundarias, reduciendo la presión sobre el servidor principal.
+
+Beneficios del Sharding en bases de datos de alto volumen:
+- Escalabilidad horizontal: Permite distribuir los datos entre varios servidores, facilitando el manejo de grandes volúmenes de información.
+- Mejor rendimiento: Al tener menos datos por servidor, las consultas pueden ejecutarse más rápido.
+- Distribución de carga: El trabajo se reparte entre varios nodos, aumentando la eficiencia general del sistema.
+
+*/

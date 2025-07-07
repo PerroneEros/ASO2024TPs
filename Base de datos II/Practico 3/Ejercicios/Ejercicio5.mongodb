@@ -1,0 +1,47 @@
+//Ejercicio 5
+//Enriquecer cada documento de ventas con la información completa del producto vendido (mediante un lookup a la colección productos).
+db.ventas.aggregate([
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "informacionCompletaProductoVendido",
+    },
+  },
+]);
+
+//Calcular el total vendido por categoría de producto.
+db.ventas.aggregate([
+  //Uno cada venta con la información del producto
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "informacionCompletaProductoVendido",
+    },
+  },
+  //desarmo el arreglo con la informavion completa del producto 
+  {
+    $unwind: "$informacionCompletaProductoVendido",
+  },
+  //agrupo las ventas por categoria de producto
+  {
+    $group: {
+      _id: "$informacionCompletaProductoVendido.categoria",
+      totalVendidoPorCategoria: {
+        $sum: {
+          $multiply: [
+            "$cantidad",
+            "$informacionCompletaProductoVendido.precio",
+          ],
+        },
+      },
+    },
+  },
+  //ordeno de las categorias de mayor a menor
+  {
+    $sort: { totalVendidoPorCategoria: -1 },
+  },
+]);

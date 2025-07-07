@@ -1,0 +1,18 @@
+use("empresa");
+
+db.createCollection("empleados");
+
+db.empleados.insertMany([
+    {nombre:'Jorge', edad: 19, puesto: 'pasante'},
+    {nombre:'Maria', edad: 43, puesto: 'Backend Developer'},
+    {nombre:'Milo', edad: 27, puesto: 'Ingeniero en Sistemas'}
+]);
+
+db.empleados.updateOne(
+    {nombre: 'Maria'},
+    {$set: {edad: 44}}
+);
+
+db.empleados.deleteOne(
+    {puesto: 'pasante'}
+);

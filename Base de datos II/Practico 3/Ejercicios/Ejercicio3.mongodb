@@ -1,0 +1,28 @@
+//Ejercicio 3
+//Crear una proyección de productos que incluya solo el nombre, precio, y una nueva propiedad llamada "precioConImpuesto" que sea el precio + 21% de IVA.
+db.productos.aggregate([
+  //Proyecto  id, nombre precio y precio con impuestos
+  {
+    $project: {
+      _id: 0,
+      nombre: 1,
+      precio: 1,
+      precioConImpuesto: {
+        $add: ["$precio", { $multiply: ["$precio", 0.21] }],
+      }, 
+    },
+  },
+]);
+
+//Para la colección de ventas, crear una proyección que incluya el ID de venta, el nombre del cliente, el total y una nueva propiedad "descuento" que sea el 10% del total.
+db.ventas.aggregate([
+  //Proyecto id, nombre del cliente, total y el descuento
+  {
+    $project: {
+      _id: 1,
+      nombreCliente: "$cliente.nombre",
+      total: 1,
+      descuento: { $multiply: ["$total", 0.1] },
+    },
+  },
+]);

@@ -1,0 +1,113 @@
+//Ejercicio 7: Referencias Crea una colección cursos y una colección alumnos.
+//Luego inserta documentos donde los alumnos tengan una lista de id_curso referenciando a los cursos.
+
+use("Universidad");
+
+db.createCollection("cursos");
+db.createCollection("alumnos");
+
+
+const curso1 = ObjectId();
+const curso2 = ObjectId();
+const curso3 = ObjectId();
+const curso4 = ObjectId();
+const curso5 = ObjectId();
+
+
+db.cursos.insertMany([
+  {
+    _id: curso1,
+    nombre: "Introducción a la Programacion orientada a objetos",
+    profesor: "Mariana Ruiz",
+    clases: [
+      { dia: "lunes", hora: "10am", aula: "A1" },
+      { dia: "jueves", hora: "10am", aula: "A1" },
+    ],
+  },
+  {
+    _id: curso2,
+    nombre: "Bases de Datos No Relacionales",
+    profesor: "Fernando Álvarez",
+    clases: [
+      { dia: "martes", hora: "3pm", aula: "B3" },
+      { dia: "viernes", hora: "3pm", aula: "B3" },
+    ],
+  },
+  {
+    _id: curso3,
+    nombre: "Analisis Matematico I",
+    profesor: "Laura Fernández",
+    clases: [
+      { dia: "miércoles", hora: "1pm", aula: "C2" },
+      { dia: "viernes", hora: "1pm", aula: "C2" },
+    ],
+  },
+  {
+    _id: curso4,
+    nombre: "Elemento de Algebra y Geometria",
+    profesor: "Ignacio Duarte",
+    clases: [
+      { dia: "martes", hora: "8am", aula: "D5" },
+      { dia: "jueves", hora: "8am", aula: "D5" },
+    ],
+  },
+  {
+    _id: curso5,
+    nombre: "Resolucion De Problemas Y Algoritmos",
+    profesor: "Julieta Fernández",
+    clases: [
+      { dia: "martes", hora: "10am", aula: "303" },
+      { dia: "jueves", hora: "10am", aula: "303" },
+    ],
+  },
+]);
+
+db.alumnos.insertMany([
+  {
+    _id: ObjectId(),
+    nombre: "Agustina",
+    apellido: "Morales",
+    cursos: [
+      { curso: curso1, estado: "cursando" },
+      { curso: curso2, estado: "aprobada", nota: 8 },
+      { curso: curso3, estado: "aprobada", nota: 9 },
+      { curso: curso4, estado: "aprobada", nota: 10 },
+      { curso: curso5, estado: "aprobada", nota: 9 },
+    ],
+  },
+  {
+    _id: ObjectId(),
+    nombre: "Franco",
+    apellido: "Vega",
+    cursos: [
+      { curso: curso1, estado: "cursando" },
+      { curso: curso2, estado: "cursando" },
+      { curso: curso4, estado: "aprobada", nota: 6 },
+      { curso: curso5, estado: "aprobada", nota: 7 },
+    ],
+  },
+  {
+    _id: ObjectId(),
+    nombre: "Valentina",
+    apellido: "Ríos",
+    cursos: [
+      { curso: curso1, estado: "cursando" },
+      { curso: curso2, estado: "cursando" },
+      { curso: curso3, estado: "aprobada", nota: 7 },
+      { curso: curso4, estado: "aprobada", nota: 8 },
+      { curso: curso5, estado: "cursando" },
+    ],
+  },
+  {
+    _id: ObjectId(),
+    nombre: "Julián",
+    apellido: "Álvarez",
+    cursos: [
+      { curso: curso1, estado: "cursando" },
+      { curso: curso2, estado: "cursando" },
+      { curso: curso3, estado: "aprobada", nota: 9 },
+      { curso: curso4, estado: "aprobada", nota: 10 },
+      { curso: curso5, estado: "aprobada", nota: 8 },
+    ],
+  },
+]);

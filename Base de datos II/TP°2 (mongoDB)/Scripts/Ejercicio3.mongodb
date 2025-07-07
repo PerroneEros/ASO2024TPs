@@ -1,0 +1,6 @@
+use("empresa");
+
+db.empleados.find(
+    {}, // indica que no hay filtro osea ta vacio
+    { _id: 0, nombre: 1, puesto: 1 } // 0 para q no muestre el id
+);

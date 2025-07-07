@@ -1,0 +1,24 @@
+//Ejercicio 1
+//Encontrar todos los productos de la categoría "Electrónica" con un precio superior a 500.
+db.productos.aggregate([
+  // Filtro los productos que sean de categoria "Electrónica"
+  // y que ademas tengan un precio mayor a 500
+  { 
+    $match: { 
+      categoria: "Electrónica",   
+      precio: { $gt: 500 }        
+    } 
+  },
+]);
+//Encontrar todas las ventas realizadas a clientes de "España" que tengan estado "Entregado".
+db.ventas.aggregate([
+  // Filtro las ventas que cumplan dos condiciones:
+  // - el cliente es de España
+  // - la venta ya fue entregada
+  {
+    $match: {
+      "cliente.pais": "España",  
+      estado: "Entregado"        
+    },
+  },
+]);

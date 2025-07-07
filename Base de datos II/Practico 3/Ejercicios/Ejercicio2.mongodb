@@ -1,0 +1,31 @@
+//Ejercicio 2
+//Calcular el precio promedio, máximo y mínimo por categoría de producto.
+db.productos.aggregate([
+  //Agrupo los productos segun su categoria
+  {
+    $group: {
+      _id: "$categoria",
+      suma: { $sum: "$precio" },
+      promedio: { $avg: "$precio" },
+      maxPrecioProducto: { $max: "$precio" },
+      minPrecioProducto: { $min: "$precio" },
+    },
+  },
+  // Ordeno los resultados de forma descendente segun el precio promedio
+  {
+    $sort: { promedio: -1 },
+  },
+]);
+
+//Obtener el total de ventas por país del cliente, incluyendo la cantidad de transacciones y el monto total.
+db.ventas.aggregate([
+  //Agrupo las ventas por pais del cliente
+  {
+    $group: {
+      _id: "$cliente.pais",
+      cantidadTransacciones: { $sum: 1 },
+      montoTotal: { $sum: { $multiply: ["$cantidad", "$precio_unitario"] } },
+      totalVentas: { $sum: "$total" },
+    },
+  },
+]);

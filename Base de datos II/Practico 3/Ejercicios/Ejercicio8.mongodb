@@ -1,0 +1,55 @@
+//Ejercicio 8
+//Obtener un informe de ventas que incluya:
+// -Top 3 productos más vendidos (por cantidad)
+// -Para cada producto: nombre, categoría, total de unidades vendidas, monto total generado
+// -Puntuación promedio en valoraciones
+
+db.ventas.aggregate([
+  //Trae la informacion del producto relacionado con cada venta
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "informacionCompletaProductoVendido",
+    },
+  },
+  //Convierto el arreglo informacionCompletaProductoVendido en un solo objeto
+  {
+    $unwind: "$informacionCompletaProductoVendido",
+  },
+  //Desarmo el arreglo de valoraciones del producto para poder calcular el promedio
+  {
+    $unwind: "$informacionCompletaProductoVendido.valoraciones",
+  },
+  //Agrupo por producto
+  {
+    $group: {
+      _id: {
+        id: "$informacionCompletaProductoVendido._id",
+        nombre: "$informacionCompletaProductoVendido.nombre",
+        categoria: "$informacionCompletaProductoVendido.categoria",
+      },
+      productoMasVendido: { $sum: "$cantidad" },
+      montoTotal: {
+        $sum: {
+          $multiply: [
+            "$cantidad",
+            "$informacionCompletaProductoVendido.precio",
+          ],
+        },
+      },
+      promedio: {
+        $avg: "$informacionCompletaProductoVendido.valoraciones.puntuacion",
+      },
+    },
+  },
+  //Ordeno los productos por la cantidad total vendida (de mayor a menor)
+  {
+    $sort: { productoMasVendido: -1 },
+  },
+  //Limito el resultado a los 3 productos mas vendidos
+  {
+    $limit: 3,
+  },
+]);

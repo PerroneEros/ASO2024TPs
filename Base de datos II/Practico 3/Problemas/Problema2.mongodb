@@ -1,0 +1,82 @@
+//Problema 2
+//Crear un pipeline que obtenga las ventas totales por mes, indicando también el producto más vendido de cada mes.
+
+db.ventas.aggregate([
+  //Uno ventas con productos para acceder al precio y nombre del producto
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "producto",
+    },
+  },
+
+  //Desarmo el arreglo producto para acceder a los campos directamente
+  {
+    $unwind: "$producto",
+  },
+
+  //Proyecto el mes , producto_id, cantidad y calculo el total de la vneta
+  {
+    $project: {
+      mes: { $dateToString: { format: "%Y-%m", date: "$fecha" } },
+      producto_id: 1,
+      cantidad: 1,
+      total: { $multiply: ["$cantidad", "$producto.precio"] },
+    },
+  },
+
+  //Agrupo por mes y producto sumando totales y cantidades vendidas
+  {
+    $group: {
+      _id: { mes: "$mes", producto: "$producto_id" },
+      totalVentasProducto: { $sum: "$total" },
+      cantidadVendida: { $sum: "$cantidad" },
+    },
+  },
+
+  //Ordeno por mes y cantidad vendida para preparar el otro grupo
+  {
+    $sort: {
+      "_id.mes": 1,
+      cantidadVendida: -1,
+    },
+  },
+
+  //Por cada mes:sumo todas las ventas y selecciono el producto más vendido y la cantidad
+  {
+    $group: {
+      _id: "$_id.mes",
+      totalVentasMes: { $sum: "$totalVentasProducto" },
+      productoMasVendido: { $first: "$_id.producto" },
+      cantidad: { $first: "$cantidadVendida" },
+    },
+  },
+
+  //Ordeno por mes
+  { $sort: { _id: 1 } },
+
+  //Traigo los datos completos del producto más vendido para mostrar
+  {
+    $lookup: {
+      from: "productos",
+      localField: "productoMasVendido",
+      foreignField: "_id",
+      as: "producto",
+    },
+  },
+
+  //Accedo a los datos del producto
+  { $unwind: "$producto" },
+
+  //Proyecto el resultado final
+  {
+    $project: {
+      _id: 1,
+      totalVentasMes: 1,
+      productoMasVendido: "$producto.nombre",
+      cantidad: 1,
+    },
+  },
+]);

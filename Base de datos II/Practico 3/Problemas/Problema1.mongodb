@@ -1,0 +1,28 @@
+//Problema 1
+//Crear un pipeline que obtenga los productos más valorados (puntuación promedio más alta) con al menos 2 valoraciones.
+
+db.productos.aggregate([
+  //Desarmo el arreglo de valoraciones en muchos documentos, seria un documento por valoracion
+  {
+    $unwind: "$valoraciones",
+  },
+
+  //agrupo por id del producto y depsues calculo el promedo de puntuacion y cantidad de valoraciones
+  {
+    $group: {
+      _id: "$_id",
+      promedioDePuntuacion: { $avg: "$valoraciones.puntuacion" },
+      cantidadDeValoraciones: { $sum: 1 },
+    },
+  },
+
+  //filtro por los productos que al menos tengan 2 valoraciones
+  {
+    $match: { cantidadDeValoraciones: { $gte: 2 } },
+  },
+
+  //ordeno los productos de mayor a menor puntuacion promedio para que queden las de mayor puntuacion arriba
+  {
+    $sort: { promedioDePuntuacion: -1 },
+  },
+]);

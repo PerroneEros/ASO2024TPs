@@ -1,0 +1,75 @@
+//Problema 3
+//Crear un informe de clientes que incluya:
+//  -Total gastado por cada cliente
+//  -Número de compras realizadas
+//  -Producto favorito (el que más ha comprado)
+//  -Categoría preferida (donde más ha gastado)
+//  -Fecha de primera y última compra
+
+db.ventas.aggregate([
+  {
+    $group: {
+      _id: "$cliente.email",
+      totalGastado: { $sum: "$total" },
+      cantidadCompras: { $sum: 1 },
+      primeraCompra: { $min: "$fecha" },
+      ultimaCompra: { $max: "$fecha" },
+    },
+  },
+]);
+
+db.ventas.aggregate([
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "producto",
+    },
+  },
+  { $unwind: "$producto" },
+  {
+    $group: {
+      _id: {
+        cliente: "$cliente.email",
+        producto: "$producto.nombre",
+      },
+      cantidad: { $sum: "$cantidad" },
+    },
+  },
+  { $sort: { "_id.cliente": 1, cantidad: -1 } },
+  {
+    $group: {
+      _id: "$_id.cliente",
+      productoFavorito: { $first: "$_id.producto" },
+    },
+  },
+]);
+
+db.ventas.aggregate([
+  {
+    $lookup: {
+      from: "productos",
+      localField: "producto_id",
+      foreignField: "_id",
+      as: "producto",
+    },
+  },
+  { $unwind: "$producto" },
+  {
+    $group: {
+      _id: {
+        cliente: "$cliente.email",
+        categoria: "$producto.categoria",
+      },
+      gasto: { $sum: "$total" },
+    },
+  },
+  { $sort: { "_id.cliente": 1, gasto: -1 } },
+  {
+    $group: {
+      _id: "$_id.cliente",
+      categoriaPreferida: { $first: "$_id.categoria" },
+    },
+  },
+]);

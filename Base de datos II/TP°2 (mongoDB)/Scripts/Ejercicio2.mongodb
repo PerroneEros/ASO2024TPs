@@ -1,0 +1,8 @@
+use("empresa");
+
+db.empleados.find({
+    $and: [
+        {edad: {$gt: 25}}, // q sea mayor a 25
+        {edad: {$lt: 40}} // y menor a 40
+    ] 
+});
