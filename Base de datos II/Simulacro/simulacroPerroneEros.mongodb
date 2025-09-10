@@ -1,0 +1,25 @@
+use("estudiantes");
+
+db.estudiantes.insertMany([
+  { nombre: "María", edad: 22, carrera: "Ingeniería", promedio: 8.5 },
+  { nombre: "Pedro", edad: 19, carrera: "Matemáticas", promedio: 6.8 },
+  { nombre: "Miguel", edad: 25, carrera: "Ingeniería", promedio: 9.2 },
+  { nombre: "Ana", edad: 24, carrera: "Física", promedio: 7.5 },
+  { nombre: "Laura", edad: 21, carrera: "Ingeniería", promedio: 6.5 },
+  { nombre: "Jorge", edad: 23, carrera: "Matemáticas", promedio: 8.0 },
+  { nombre: "Lucía", edad: 20, carrera: "Biología", promedio: 7.8 },
+  { nombre: "Diego", edad: 26, carrera: "Ingeniería", promedio: 9.0 },
+]);
+
+db.estudiantes.aggregate([{ $match: { edad: { $gte: 20, $lte: 25 } } }]);
+
+db.estudiantes.updateMany(
+  { carrera: "Ingeniería" },
+  { $inc: { promedio: 0.2 } }
+);
+
+db.estudiantes.deleteMany({ promedio: { $lt: 7 } });
+
+db.estudiantes.find({
+  $or: [{ nombre: { $regex: "^M" } }, { promedio: { $gte: 9 } }],
+});
