@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedor {
+        background: #ffffff;
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 24px;
+      }
+      input[type="text"] {
+        width: calc(100% - 110px);
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+      input[type="text"]:focus {
+        border-color: #5dade2;
+        outline: none;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: red;
+        border: none;
+        color: white;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #3498db;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+        text-align: left;
+      }
+      li {
+        background: #f0f0f0;
+        margin-bottom: 12px;
+        padding: 12px 15px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        transition: background 0.3s;
+      }
+      li:hover {
+        background: #e0e0e0;
+      }
+      .delete-btn {
+        background-color: #e74c3c;
+        border: none;
+        padding: 7px 12px;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+      .delete-btn:hover {
+        background-color: #c0392b;
+      }
+      a {
+        margin: 300px 20px 20px 20px;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        color: #007BFF;
+      }
+      a:hover {
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <h2>Lista</h2>
+      <input type="text" id="texto" placeholder="Escribe algo..." />
+      <button id="botonAgregar">Agregar</button>
+
+      <ul id="itemList"></ul>
+    </div>
+
+    <a href="/tp2/index.html">Pagina principal</a>
+
+    <script>
+      const botonAgregar = document.getElementById("botonAgregar");
+      const texto = document.getElementById("texto");
+      const itemList = document.getElementById("itemList");
+
+      botonAgregar.addEventListener("click", () => {
+        const text = texto.value.trim();
+        if (text !== "") {
+          const li = document.createElement("li");
+          li.textContent = text;
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Eliminar";
+          deleteButton.className = "delete-btn";
+
+          deleteButton.addEventListener("click", () => {
+            itemList.removeChild(li);
+          });
+
+          li.appendChild(deleteButton);
+          itemList.appendChild(li);
+
+          texto.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

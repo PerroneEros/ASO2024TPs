@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+    <style>
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: red;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 8px;
+      }
+
+      .botones {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .parrafo {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #222;
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin: 10px;
+        border-left: 3px solid red;
+      }
+
+      .ocultar {
+        display: none;
+      }
+
+      .resaltar {
+        background-color: yellow;
+        font-weight: bold;
+      }
+
+      a {
+        margin: 300px 20px 20px 20px;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        color: #007BFF;
+      }
+      a:hover {
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <p class="parrafo">Letra de "Contrapunto para Humano y Computadora"</p>
+
+      <p class="parrafo">
+        La primera es la vencida La tercera es la tercera Así que reto a
+        cualquiera Que conmigo aquí se mida Quien acepte es un suicida Que se
+        sobrevalora Porque nadie me vence ahora Ni el coplero campeón mundial Ni
+        un rapero de freestyle Ni la mejor computadora
+      </p>
+
+      <p class="parrafo">
+        ¿Ni la mejor computadora? ¿Lo dice usted que es un simple humano? Se
+        muestra tan ufano Pero le llegó la hora Porque su ego lo devora Y se
+        cree superior a ultranza Pero con una muestra alcanza Hoy las bombas que
+        crearon sus mentes Son más inteligentes Que los idiotas que las lanzan
+      </p>
+
+      <p class="parrafo">
+        Los idiotas que las lanzan A mí no me representan Pero a los que las
+        inventan Quizás debas tu confianza Y aunque parezca chanza Tu vida es
+        por su invención Y digo vida con compasión A un rejunte irrazonable De
+        circuitos, chips y cables Sin alma ni corazón
+      </p>
+    </div>
+
+    <div class="botones">
+      <button type="button" id="boton-ocultar">Ocultar</button>
+      <button type="button" id="boton-resaltar">Resaltar</button>
+    </div>
+
+    <a href="/tp2/index.html">Pagina principal</a>
+
+    <script>
+      const boton_ocultar = document.getElementById("boton-ocultar");
+      const boton_resaltar = document.getElementById("boton-resaltar");
+
+      boton_ocultar.addEventListener("click", () => {
+        const parrafos = document.getElementsByClassName("parrafo");
+        for (let p of parrafos) {
+          p.classList.add("ocultar");
+        }
+      });
+
+      boton_resaltar.addEventListener("click", () => {
+        const parrafos = document.getElementsByClassName("parrafo");
+        for (let p of parrafos) {
+          p.classList.add("resaltar");
+        }
+      });
+    </script>
+  </body>
+</html>

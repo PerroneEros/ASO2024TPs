@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <section class="content contacto">
+        <h2 class="title">Contacto</h2>
+
+        <!-- Este contenedor alinea mapa y formulario -->
+        <div class="contacto-wrapper"> 
+
+            <!-- Mapa -->
+            <div class="mapa">
+                <img src="/ola.jpg" alt="Ubicación en el mapa">
+
+                <div class="datos-contacto">
+                    <p><strong>WhatsApp:</strong> +54 9 2923464118</p>
+                    <p><strong>Instagram:</strong> Autos_Al_Piso </p>
+                    <p><strong>Email:</strong> autosalpiso@gmail.com</p>
+                    <p><strong>Dirección:</strong> Calle Falsa 123, Buenos Aires, Argentina</p>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <form class="form-container">
+
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"  placeholder="Ingrese su Email" />
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su Telefono"  />
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" placeholder="Ingrese su comentario"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="opciones">Selecciona una opción:</label>
+                    <select id="opciones" name="opciones">
+                        <option value="">-- Selecciona --</option>
+                        <option value="op1">Opción 1</option>
+                        <option value="op2">Opción 2</option>
+                        <option value="op3">Opción 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferencia de contacto:</label>
+                    <div class="options">
+                        <label><input type="radio" name="preferencia" value="email" /> Email</label>
+                        <label><input type="radio" name="preferencia" value="telefono" /> Teléfono</label>
+                        <label><input type="checkbox" name="condiciones" />Acepta términos y condiciones </label>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Reset</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</body>

@@ -1,0 +1,86 @@
+<!--Crea una página con un número que se incremente automáticamente cada segundo. Agregá un botón para pausar y otro para reiniciar el conteo.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 6 - cronometro</title>
+    <style>
+      body {
+        font-family: Arial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #e0f7fa;
+      }
+
+      section {
+        text-align: center;
+      }
+
+      #display {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 8px;
+        background-color: #009688;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #00796b;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2>Ejercicio 6 - cronometro</h2>
+      <div id="display">0</div>
+      <button id="iniciar">Iniciar</button>
+      <button id="pausar">Pausar</button>
+      <button id="reiniciar">Reiniciar</button>
+    </section>
+
+    <script>
+      const inicio = document.getElementById("iniciar");
+      const pausa = document.getElementById("pausar");
+      const reinicio = document.getElementById("reiniciar");
+      const display = document.getElementById("display");
+
+      let timer = null;
+
+      let tiempo = 0;
+
+      function start() {
+        timer = setInterval(function () {
+          tiempo++;
+          display.innerHTML = tiempo;
+        }, 1000);
+      }
+
+      function pause() {
+        clearInterval(timer);
+      }
+
+      function restart() {
+        pause();
+        tiempo = 0;
+        display.innerHTML = tiempo;
+      }
+
+      inicio.addEventListener("click", start);
+      pausa.addEventListener("click", pause);
+      reinicio.addEventListener("click", restart);
+    </script>
+  </body>
+</html>

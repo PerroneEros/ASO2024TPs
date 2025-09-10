@@ -1,0 +1,28 @@
+<!--Crea un formulario con campos: nombre, edad, email. Si alguno está vacío o la edad no es un número mayor a 0, muestra el error correspondiente debajo de cada campo.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Formulario con errores</title>
+    <link rel="stylesheet" href="/Ejercicio5/ejrcicio5.css">
+</head>
+<body>
+    <h2>Ejercicio 5 - Formulario con errores</h2>
+    <form onsubmit="ValidarFormulario(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" placeholder="Edad" min="0" max="120" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email">
+        <div id="MensajeError" class="error"></div>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="/Ejercicio5/ejrcicio5.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.resaltado {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+.completado {
+    text-decoration: line-through;
+    color:gray;
+}

@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contacto-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mapa {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.mapa img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.datos-contacto {
+  margin-top: 15px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.datos-contacto p {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.datos-contacto i {
+  color: #007bff;
+  width: 20px;
+}
+
+.datos-contacto a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.datos-contacto a:hover {
+  text-decoration: underline;
+}
+
+.form-container {
+  flex: 1 1 300px;
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: grid;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="reset"] {
+  background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .contacto-wrapper {
+      flex-direction: column;
+  }
+
+  .buttons {
+      flex-direction: column;
+      align-items: stretch;
+  }
+}
+
+@media (max-width: 360px) {
+  .form-container {
+      padding: 10px;
+  }
+}

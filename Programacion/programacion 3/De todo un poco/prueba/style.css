@@ -1,0 +1,527 @@
+/* General */
+body {
+    min-height: 100vh; /* mínimo 100% del alto de la ventana */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;  /* Use la fuente Roboto para todo el sitio */
+    background-color: #f4f4f4; /* Color de fondo gris claro */
+    color: #333; /* Color de texto gris oscuro */
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Esto sirve para heredar el color del texto del elemento padre */
+}
+
+/* Header */
+.head {
+    display: flex; /* Distribuye elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center;
+    padding: 1rem 2rem; 
+    background-color: #111;
+    color: white;
+}
+
+.logo a {
+    font-size: 1.5rem; 
+    font-weight: bold;  /* Texto en negrita */
+    color: #ffff;
+}
+
+.Navbar ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; 
+    gap: 1.5rem; /* Espacio entre los elementos de la lista */
+}
+
+.Navbar a {
+    position: relative; /* Lo necesito para las líneas animadas */
+    text-decoration: none;
+    padding: 5px 0;  /* Un poco de espacio arriba y abajo */
+    color: white;
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+
+
+/*
+---------------------Navbar Barra de navegación---------------------
+*/
+/* Dobles Líneas animadas debajo del texto */
+.Navbar a::before,
+.Navbar a::after {
+    content: ""; 
+    position: absolute; /* Se posiciona en base al .Navbar <a> (por eso usamos relative arriba) */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff4d00; /* mismo color que el hover */
+    transform: scaleX(0); /* Las líneas están "escondidas" al inicio (ancho 0) */
+    transition: transform 0.3s ease; /* Transición suave para el ancho */
+}
+
+.Navbar a::before {
+    bottom: 0;  /* Primera línea justo debajo del texto */
+    transform-origin: left; /* Aparece desde la izquierda hacia la derecha */
+}
+
+.Navbar a::after {
+    bottom: -5px; /* Segunda línea un poco más abajo */
+    transform-origin: right; /* Esta aparece desde la derecha hacia la izquierda */
+}
+
+.Navbar a:hover {
+    color: #ff4d00; /* Cambia el color del texto al pasar el mouse */
+}
+
+.Navbar a:hover::before,
+.Navbar a:hover::after {
+    transform: scaleX(1); /* Ahora sí se muestran las dos líneas */
+}
+
+/* -------------------------------------------------------------------*/
+
+
+
+/*
+---------------------Imagen con Letras Dentro---------------------
+*/
+
+.promo-credito {
+    position: relative; /* Necesario para el posicionamiento absoluto de los hijos */
+    height: 90vh; /* Altura de la imagen */
+    background-image: url("img/portada.jpg"); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    padding: 2rem; /* Espacio alrededor del contenido */
+}
+
+.promo-contenido {
+    max-width: 800px; /* Ancho máximo del contenido */
+    z-index: 1; /* Asegura que el contenido esté por encima de la imagen */
+}
+
+.promo-contenido h1 {
+    font-size: 10rem; 
+    margin: 0; 
+    font-weight: 900; 
+}
+
+.promo-contenido h2 {
+    font-size: 4rem; 
+    margin: 0; 
+    font-weight: 700; 
+}
+
+.promo-contenido h3 {
+    font-size: 3rem; 
+    background-color: #08ad79; 
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin: 1rem 0;
+}
+
+.promo-contenido p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.boton-credito {
+    padding: 1rem 2rem; /* Espacio dentro del botón */
+    background-color: rgba(0,0,0,0.9);  
+    color: white; /* Color del texto */
+    border: 2px solid white;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+}
+
+.boton-credito:hover {
+    background-color:  #08ad79;
+    color: white; /* Cambia el color del texto al pasar el mouse */
+}
+
+
+/* -------------------------------------------------------------------*/
+
+
+
+
+/* Front Page (Portada) */
+.front {
+    width: 80%;
+    height: 33vh; /* Altura equivalente a 1/3 como dice en TP */
+    margin: 0 auto; /* Para centrarlo */
+    overflow: hidden;
+    position: relative; /* Necesario si querés posicionar cosas encima después */
+}
+
+.diapositivas {
+    display: flex;
+    width: 300%;
+    animation: slide 12s infinite; /* Aplica una animación llamada slide que dura 12s y se repite siempre */
+    scroll-snap-type: x mandatory;
+}
+
+.diapositivas img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); } /* Comienza en la posición original */
+    33% { transform: translateX(-100%); } /* Mueve la imagen a la izquierda */
+    66% { transform: translateX(-200%); } /* Mueve la imagen a la izquierda */
+    100% { transform: translateX(0); } /* Regresa a la posición original */
+}
+
+/* Main Content */
+.content.home {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    color: #111;
+}
+
+.content.home p {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Espacio entre líneas */
+    margin-bottom: 2rem;
+}
+
+.botones a {
+    display: inline-block; 
+    margin: 0 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff4d00;
+    color: white;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.botones a:hover {
+    background-color: #cc3c00; /* Color más oscuro al pasar el mouse */
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer .redes a {
+    margin: 0 0.5rem; /* Espacio entre los iconos de redes sociales */
+}
+
+.card-container{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.card{
+    width: 325px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+.card-content{
+    padding: 16px;
+}
+
+.card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-content p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.card-content .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+
+
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); /* Se adapta automáticamente */
+    gap: 20px; /* Espaciado entre cajas */
+    width: 90%;
+    margin: 0 auto;
+    padding: 10%;
+    background-color: #ffffff;
+    border-radius: 10px;   
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.caja {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0.4px 8px rgba(0,0,0,0.2);
+    transition: transform  0.3s ease-in-out;
+}
+.caja:hover{
+
+    transform:scale(1.05);
+}
+
+
+.caja img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.Boton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Oscurecimiento ligero */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Mostrar botón al pasar el mouse */
+.caja:hover .Boton {
+    opacity: 1;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: grid;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .buttons {
+    flex-direction: column;
+    align-items: stretch;
+    }
+}
+
+@media (max-width: 360px) {
+    .form-container {
+    padding: 10px;
+}
+}
+/* puto*/
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: grid;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .buttons {
+    flex-direction: column;
+    align-items: stretch;
+    }
+}
+
+@media (max-width: 360px) {
+    .form-container {
+    padding: 10px;
+    }
+}
+.contacto-wrapper {
+    display: flex;
+    gap: 30px; /* separación entre el mapa y el formulario */
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; /* para que en pantallas chicas se acomoden uno debajo del otro */
+}
+
+.mapa {
+    flex: 1 1 300px; /* que ocupe espacio flexible pero mínimo 300px */
+    max-width: 500px; /* que no se pase de ese ancho */
+}
+
+.mapa img {
+    width: 100%; /* que la imagen se adapte al contenedor */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container {
+    flex: 1 1 300px; /* igual que el mapa para que ocupen similar espacio */
+}
+
+  /* Responsividad para pantallas más chicas */
+@media (max-width: 768px) {
+    .contacto-wrapper {
+    flex-direction: column;
+    }
+
+.buttons {
+    flex-direction: column;
+    align-items: stretch;
+    }
+}

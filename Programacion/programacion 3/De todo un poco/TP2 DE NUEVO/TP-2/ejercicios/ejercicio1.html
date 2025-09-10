@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+    <style>
+      a {
+        margin: 300px 20px 20px 20px;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        color: #007BFF;
+      }
+      a:hover {
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 id="titulo">titulo</h1>
+    <p class="parrafo">primer parrafo</p>
+    <p class="parrafo">segundo pararafo</p>
+    <div id="contenedor">
+      <ul>
+        <li>Primer item</li>
+        <li>Segundo item</li>
+        <li>Tercer item</li>
+      </ul>
+    </div>
+
+    <a href="/tp2/index.html">Pagina principal</a>
+    <script>
+      const titulo = document.getElementById("titulo");
+      titulo.textContent = "titulo cambiado con js";
+
+      const parrafos = document.getElementsByClassName("parrafo");
+      for (let i = 0; i < parrafos.length; i++) {
+        parrafos[i].style.color = "blue";
+      }
+
+      const items = document.querySelectorAll("#contenedor li");
+      items.forEach((item) => {
+        item.textContent += " texto nuevo";
+      });
+    </script>
+  </body>
+</html>

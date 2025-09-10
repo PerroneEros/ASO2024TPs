@@ -1,0 +1,59 @@
+<!--Ejercicio 2 – Detección de número par o impar (50%)
+
+En la página ya existen:
+
+Un campo de texto para introducir un número (id="numero").
+Un botón para comprobar (id="comprobar").
+Al pulsar el botón, tu script deberá:
+
+Si el campo de texto está vacío, mostrar en una ventana emergente: "El texto está vacío".
+Si no es un número válido, mostrar en un texto debajo del campo el texto "No es un número válido".
+Si es un número válido, calcular si es par o impar (puedes usar: x % 2) y mostrar en una ventana emergente "El número es par" o "El número es impar".
+Ayuda: Puedes usar addEventListener('click', ...), Number() o parseInt(), isNaN() y el operador módulo %.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 numero par o impar</title>
+    
+</head>
+<body>
+    <input type="text" id="numero" placeholder="Introduce un número">
+    <button id="comprobar">Comprobar</button>
+    <p id="mensaje-error"></p>
+
+    <script>
+        // Obtengo los elementos del DOM
+        const campoNumero = document.getElementById('numero');
+        const botonComprobar = document.getElementById('comprobar');
+        const mensajeError = document.getElementById('mensaje-error');
+
+        // Agregar evento de click al botón
+        botonComprobar.addEventListener('click', () => {
+            // Obtener el valor del campo de texto
+            const valor = campoNumero.value;
+
+            // compruebo si el campo está vacío
+            if (valor === '') {
+                alert('El texto está vacío');
+                return;
+            }
+
+            // Comprobo si es un número válido
+            const numero = Number(valor);
+            if (isNaN(numero)) {
+                mensajeError.textContent = 'No es un número válido';
+                return;
+            }
+            
+            // Calcula si es par o impar
+            const esPar = numero % 2 === 0;
+            const mensaje = esPar ? 'El número es par' : 'El número es impar';
+
+            // Mostrar el resultado con una alerta
+            alert(mensaje);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      #task {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 200px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      ul {
+        margin-top: 20px;
+        width: 300px;
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+        padding: 10px;
+        margin-bottom: 8px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      li:hover {
+        background-color: #f0f0f0;
+      }
+
+      .completado {
+        text-decoration: line-through;
+        color: gray;
+      }
+      a {
+        margin: 30px 20px 20px 20px;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        color: #007BFF;
+      }
+      a:hover {
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>Lista</h1>
+    <form id="form">
+      <input type="text" id="task" placeholder="Escribe una tarea" required />
+      <button type="submit">Añadir</button>
+    </form>
+    <ul id="taskList"></ul>
+
+    <a href="/tp2/index.html">Pagina principal</a>
+
+    <script>
+      const formulario = document.getElementById("form");
+      const taskList = document.getElementById("taskList");
+
+      formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const taskInput = document.getElementById("task").value;
+
+        if (taskInput && taskInput.length <= 50) {
+          const li = document.createElement("li");
+          li.textContent = taskInput;
+          taskList.appendChild(li);
+          document.getElementById("task").value = "";
+        }
+      });
+
+      taskList.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          event.target.classList.toggle("completado");
+        }
+      });
+    </script>
+  </body>
+</html>

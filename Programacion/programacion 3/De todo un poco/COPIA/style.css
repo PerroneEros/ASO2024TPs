@@ -1,0 +1,231 @@
+/* General */
+body {
+    min-height: 100vh; /* mínimo 100% del alto de la ventana */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;  /* Use la fuente Roboto para todo el sitio */
+    background-color: #f4f4f4; /* Color de fondo gris claro */
+    color: #333; /* Color de texto gris oscuro */
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Esto sirve para heredar el color del texto del elemento padre */
+}
+
+/* Header */
+.head {
+    display: flex; /* Distribuye elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center;
+    padding: 1rem 2rem; 
+    background-color: #111;
+    color: white;
+}
+
+.logo a {
+    font-size: 1.5rem; 
+    font-weight: bold;  /* Texto en negrita */
+    color: #ffff;
+}
+
+.Navbar ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; 
+    gap: 1.5rem; /* Espacio entre los elementos de la lista */
+}
+
+.Navbar a {
+    position: relative; /* Lo necesito para las líneas animadas */
+    text-decoration: none;
+    padding: 5px 0;  /* Un poco de espacio arriba y abajo */
+    color: white;
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+
+
+/*
+---------------------Navbar Barra de navegación---------------------
+*/
+/* Dobles Líneas animadas debajo del texto */
+.Navbar a::before,
+.Navbar a::after {
+    content: ""; 
+    position: absolute; /* Se posiciona en base al .Navbar <a> (por eso usamos relative arriba) */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff4d00; /* mismo color que el hover */
+    transform: scaleX(0); /* Las líneas están "escondidas" al inicio (ancho 0) */
+    transition: transform 0.3s ease; /* Transición suave para el ancho */
+}
+
+.Navbar a::before {
+    bottom: 0;  /* Primera línea justo debajo del texto */
+    transform-origin: left; /* Aparece desde la izquierda hacia la derecha */
+}
+
+.Navbar a::after {
+    bottom: -5px; /* Segunda línea un poco más abajo */
+    transform-origin: right; /* Esta aparece desde la derecha hacia la izquierda */
+}
+
+.Navbar a:hover {
+    color: #ff4d00; /* Cambia el color del texto al pasar el mouse */
+}
+
+.Navbar a:hover::before,
+.Navbar a:hover::after {
+    transform: scaleX(1); /* Ahora sí se muestran las dos líneas */
+}
+
+/* -------------------------------------------------------------------*/
+
+
+
+/*
+---------------------Imagen con Letras Dentro---------------------
+*/
+
+.promo-credito {
+    position: relative; /* Necesario para el posicionamiento absoluto de los hijos */
+    height: 90vh; /* Altura de la imagen */
+    background-image: url("img/portada.jpg"); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    padding: 2rem; /* Espacio alrededor del contenido */
+}
+
+.promo-contenido {
+    max-width: 800px; /* Ancho máximo del contenido */
+    z-index: 1; /* Asegura que el contenido esté por encima de la imagen */
+}
+
+.promo-contenido h1 {
+    font-size: 10rem; 
+    margin: 0; 
+    font-weight: 900; 
+}
+
+.promo-contenido h2 {
+    font-size: 4rem; 
+    margin: 0; 
+    font-weight: 700; 
+}
+
+.promo-contenido h3 {
+    font-size: 3rem; 
+    background-color: #08ad79; 
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin: 1rem 0;
+}
+
+.promo-contenido p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.boton-credito {
+    padding: 1rem 2rem; /* Espacio dentro del botón */
+    background-color: rgba(0,0,0,0.9);  
+    color: white; /* Color del texto */
+    border: 2px solid white;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+}
+
+.boton-credito:hover {
+    background-color:  #08ad79;
+    color: white; /* Cambia el color del texto al pasar el mouse */
+}
+
+
+/* -------------------------------------------------------------------*/
+
+
+
+
+/* Front Page (Portada) */
+.front {
+    width: 80%;
+    height: 33vh; /* Altura equivalente a 1/3 como dice en TP */
+    margin: 0 auto; /* Para centrarlo */
+    overflow: hidden;
+    position: relative; /* Necesario si querés posicionar cosas encima después */
+}
+
+.diapositivas {
+    display: flex;
+    width: 300%;
+    animation: slide 12s infinite; /* Aplica una animación llamada slide que dura 12s y se repite siempre */
+    scroll-snap-type: x mandatory;
+}
+
+.diapositivas img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); } /* Comienza en la posición original */
+    33% { transform: translateX(-100%); } /* Mueve la imagen a la izquierda */
+    66% { transform: translateX(-200%); } /* Mueve la imagen a la izquierda */
+    100% { transform: translateX(0); } /* Regresa a la posición original */
+}
+
+/* Main Content */
+.content.home {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    color: #111;
+}
+
+.content.home p {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Espacio entre líneas */
+    margin-bottom: 2rem;
+}
+
+.botones a {
+    display: inline-block; 
+    margin: 0 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff4d00;
+    color: white;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.botones a:hover {
+    background-color: #cc3c00; /* Color más oscuro al pasar el mouse */
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer .redes a {
+    margin: 0 0.5rem; /* Espacio entre los iconos de redes sociales */
+}

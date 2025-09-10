@@ -1,0 +1,72 @@
+<!-- -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2 – Validación de formulario</title>
+    <style>
+      body {
+        font-family: Arial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      section {
+        text-align: center;
+      }
+      input,
+      button {
+        font-size: 16px;
+        padding: 10px;
+        margin: 5px;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #388e3c;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2>Ejercicio 2 – Validación de formulario</h2>
+      <form onsubmit="validarFormulario(event)">
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <br />
+        <input type="email" id="email" placeholder="Correo electrónico" />
+        <div id="mensajeError" class="error"></div>
+        <br />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+    <script>
+      function validarFormulario(event) {
+        event.preventDefault();
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mensaje = document.getElementById("mensajeError");
+
+        if (nombre === "" || email === "") {
+          mensaje.textContent = "Por favor, completa todos los campos.";
+        } else {
+          mensaje.textContent = "";
+          alert("Formulario enviado con éxito");
+        }
+      }
+    </script>
+  </body>
+</html>

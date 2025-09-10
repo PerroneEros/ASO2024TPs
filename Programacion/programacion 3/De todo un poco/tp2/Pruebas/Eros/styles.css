@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    background: #f4f4f4;
+  }
+  
+  .form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: grid;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button[type="reset"] {
+    background-color: #ccc;
+  }
+  
+  @media (max-width: 768px) {
+    .buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .form-container {
+      padding: 10px;
+    }
+  }
+  .contacto-wrapper {
+    display: flex;
+    gap: 30px; /* separación entre el mapa y el formulario */
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; /* para que en pantallas chicas se acomoden uno debajo del otro */
+  }
+  
+  .mapa {
+    flex: 1 1 300px; /* que ocupe espacio flexible pero mínimo 300px */
+    max-width: 500px; /* que no se pase de ese ancho */
+  }
+  
+  .mapa img {
+    width: 100%; /* que la imagen se adapte al contenedor */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .form-container {
+    flex: 1 1 300px; /* igual que el mapa para que ocupen similar espacio */
+  }
+  
+  /* Responsividad para pantallas más chicas */
+  @media (max-width: 768px) {
+    .contacto-wrapper {
+      flex-direction: column;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  

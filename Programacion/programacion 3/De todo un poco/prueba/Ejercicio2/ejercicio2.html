@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 – Validación de formulario</title>
+    <link rel="stylesheet" href="ejercicio2.css">
+</head>
+<body>
+    <section>
+        <h2>Ejercicio 2 – Validación de formulario</h2>
+        <form onsubmit="validarFormulario(event)">
+            <input type="text" id="nombre" placeholder="Nombre">
+            <br>
+            <input type="email" id="email" placeholder="Correo electrónico">
+            <div id="mensajeError" class="error"></div>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <script src="ejercicio2.js"></script>
+</body>
+</html>

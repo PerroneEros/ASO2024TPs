@@ -1,0 +1,51 @@
+<!--/*Ejercicio 1 – Estilos de enlaces con pseudo-clases (50%)
+
+Define un archivo de estilos para los enlaces ya existentes en la página:
+
+Color normal: #0066cc.
+Al pasar el ratón: cambia a #004499 y subraya el texto.
+Al hacer clic: cambia a #002266 y aplica transform: scale(0.95) para un efecto de “hundido”.-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 estilos de enlaces con pseudo clases</title>
+    <style>
+        a {
+            display:inline-block;/*Necesario para que funcione*/
+            color: #0066cc;
+            text-decoration: none;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #002266;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 1 estilos de enlaces con pseudo clases</h1>
+    <p>
+        <a href="#">Enlace normal</a>
+    </p>
+    <p>
+        <a href="#">segundo enlace normal</a>
+    </p>
+    <p>
+        <a href="#">tercer encnlace normal</a>
+    </p>
+</body>
+
+</html>
