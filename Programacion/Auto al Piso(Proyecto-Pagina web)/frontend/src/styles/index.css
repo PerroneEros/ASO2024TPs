@@ -1,0 +1,268 @@
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9 ;
+  color: #1a1a1a;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 16px 32px; 
+  background-color: #111;
+  color: white;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 20%;
+}
+
+.Navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 24px; 
+}
+
+.Navbar a {
+  position: relative;
+  padding: 5px 0;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.Navbar ul li i {
+  font-size: 24px; 
+  cursor: pointer;
+}
+
+.Navbar a::before,
+.Navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff4d00;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.Navbar a::before {
+  bottom: 0;
+  transform-origin: left;
+}
+
+.Navbar a::after {
+  bottom: -5px;
+  transform-origin: right;
+}
+
+.Navbar a:hover {
+  color: #ff4d00;
+}
+
+.Navbar a:hover::before,
+.Navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28.8px; 
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .Navbar ul {
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 999;
+  }
+
+  .Navbar ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+.slider-container {
+  width: 80%;
+  height: 33vh;
+  margin: 32px auto; 
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slide ul {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
+  padding: 0;
+  margin: 0;
+}
+
+.slide ul li {
+  list-style: none;
+  width: 100%;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-texto {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  right: 5%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 16px; 
+  border-radius: 10px;
+  font-size: 19.2px; 
+  text-align: center;
+  z-index: 10;
+}
+
+@keyframes slide {
+  0% { margin-left: 0; }
+  20% { margin-left: 0; }
+  25% { margin-left: -100%; }
+  45% { margin-left: -100%; }
+  50% { margin-left: -200%; }
+  70% { margin-left: -200%; }
+  75% { margin-left: -300%; }
+  100% { margin-left: -300%; }
+}
+
+
+.content.home {
+  flex-grow: 1;
+  padding: 32px; 
+  text-align: center;
+}
+
+.title {
+  font-size: 32px; 
+  margin-bottom: 16px; 
+  color: white;
+}
+
+.content.home p {
+  font-size: 17.6px; 
+  line-height: 1.6;
+  margin-bottom: 32px; 
+}
+
+.botones a {
+  display: inline-block;
+  margin: 0 16px; 
+  padding: 12px 24px; 
+  background-color: #ff9f43;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.botones a:hover {
+  background-color: #e8590c;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin-top: 32px; 
+}
+
+.footer .redes a {
+  margin: 0 8px; 
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px; 
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+.ir-arriba {
+  display: none;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
