@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Turnos</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">+ consulta médica</div>
+    <button onclick="logout()" class="login-button">Cerrar sesión</button>
+  </header>
+
+  <div class="turnos-container">
+    <h2>Mis Turnos</h2>
+    <ul id="lista-turnos">
+      <li>Cargando turnos...</li>
+    </ul>
+    <div id="acciones" style="margin-top: 20px;"></div>
+  </div>
+
+  <button id="btn-turnos" class="reserve-button">Ir a mis turnos</button>
+
+  <script>
+    const token = localStorage.getItem("token");
+    const id = localStorage.getItem("userId");
+
+    if (!token || !id) {
+      alert("Debes iniciar sesión.");
+      window.location.href = "/login";
+    }
+
+    // Carga de turnos
+    fetch(`/api/v1/turnos/${id}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("No se encontraron turnos");
+      return res.json();
+    })
+    .then(turnos => {
+      const lista = document.getElementById("lista-turnos");
+      lista.innerHTML = "";
+
+      if (turnos.length === 0) {
+        lista.innerHTML = "<li>No se encontraron turnos.</li>";
+        document.getElementById("acciones").innerHTML = `
+          <a href="/"><button class="reserve-button">Volver al inicio</button></a>
+        `;
+        return;
+      }
+
+      turnos.forEach(t => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <strong>${t.nombre}</strong> - ${t.email}<br>
+          Turno: ${t.fecha} - ${t.hora}
+          <form onsubmit="eliminarTurno(event, '${t.id}')">
+            <button type="submit" class="eliminar-button">Eliminar</button>
+          </form>
+        `;
+        lista.appendChild(li);
+      });
+
+      document.getElementById("acciones").innerHTML = `
+        <a href="/"><button class="reserve-button">Volver al inicio</button></a>
+      `;
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      document.getElementById("lista-turnos").innerHTML = "<li>Error al obtener turnos.</li>";
+    });
+
+    // Eliminar
+    function eliminarTurno(event, idTurno) {
+      event.preventDefault();
+      fetch(`/api/v1/turnos/${idTurno}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(() => location.reload())
+      .catch(err => console.error("Error al eliminar:", err));
+    }
+
+    // Logout con addEventListener
+    document.querySelector(".login-button").addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "/login";
+    });
+
+    // Redirección directa (confía en middleware en backend para validar token)
+    document.getElementById("btn-turnos").addEventListener("click", () => {
+      window.location.href = "/turnos/vista";
+    });
+  </script>
+
+</body>
+</html>

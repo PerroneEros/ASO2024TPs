@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Consulta Médica</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">+ consulta medica</div>
+        <a href="/login">
+            <button class="login-button">Iniciar Sesion</button>
+        </a>
+    </header>
+   <main class="login-container">
+        <h1>Registrarse</h1>
+ <form action="/register" method="post" class="login-form form-container">
+    <input type="text" name="dni" placeholder="DNI" required>
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="text" name="apellido" placeholder="Apellido" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button type="submit" class="reserve-button">Registrarse</button>
+</form>
+
+    </main>
+      <footer>
+        <p>2025 Consulta Médica, todos los derechos reservados</p>
+        <p>Contacto: contacto@consultamedica.com</p>
+    </footer>
+</body>

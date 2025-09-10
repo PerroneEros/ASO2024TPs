@@ -1,0 +1,276 @@
+/* -----------------Index------------------- */
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f7ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 255, 234, 0.13);
+}
+.login-button:hover{
+    background-color: #0064cf;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 32px;
+    color: #003366;
+}
+
+p {
+    color: #555;
+}
+
+.especialidades {
+    display: flex;
+    flex-wrap: wrap;         
+    justify-content: center; 
+    gap: 20px;              
+    max-width: 1000px;      
+    margin: 30px auto;      
+}
+
+.card {
+    background-color: white;
+    width: 200px;         
+    padding: 20px;
+    border-radius: 12px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    border: 2px solid #007bff;
+}
+
+
+.card .icon {
+    font-size: 32px;
+}
+
+.card h2 {
+    margin: 10px;
+}
+
+.card button {
+    background-color: #f0f7ff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.reserve-button { 
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 19px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+footer{
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+footer p {
+    color: #cccccc;  
+    margin: 5px 0;
+    font-size: 14px;
+}
+/* --------------------------------------------------------------------------------------- */
+/*----------------------- Login---------------------------------*/
+.login-container{
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+       opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h1{
+    font-size: 28px;
+    margin-bottom: 20px;
+    color:#003366;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.login-form button{
+    background-color:#007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.login-form button:hover{
+    background-color: #0056b3;
+}
+
+.signup-text { 
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-text a {
+    color:#007bff;
+     text-decoration: none;
+}
+
+.signup-text a:hover{
+      text-decoration: underline;
+}
+/*----------------------------------------------------------------------------------*/
+/*----------------------- Registrarse---------------------------------*/
+.login-form input{
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+.login-form input:focus {
+    border-color: #007bff;
+
+}
+
+/*----------------------------------------------------------------------------------*/
+/*----------------------- Turnos---------------------------------*/
+
+.turnos-container{
+max-width: 600px;
+margin: 40px auto;
+background-color: white ;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 4px 16px rgba(0,0,0,0.1);
+text-align: left;
+animation: fadeIn 0.8s ease forwards; 
+}
+.turnos-container ul{
+padding: 0;
+}
+
+.turnos-container li{
+    background-color: #f0f7ff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    box-shadow: 2px 8px rgba(0,0,0,0.05);
+}
+
+.eleminar-button { 
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.eliminar-button{
+    background-color: #c82333;
+    
+}
+.turnos-container form{
+    margin-top:20px;
+}
+
+.turnos-container input[type="text"],
+.turnos-container input[type="datetime-local"]{
+    width:100%;
+    padding:12px;
+    margin:  10px 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.turnos-container input:focus {
+    border-color:#007bff;
+}
+
+.turnos-container h2{
+    margin-top: 30px;
+    font-size: 24px;
+    color: #003366;
+}
+
+.reserve-button {
+background-color: #007bff;
+color: white;
+padding: 12px 24px;
+border-radius: 10px;
+font-size:16px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+.reserve-button:hover{
+    background-color: #0056b3;
+}

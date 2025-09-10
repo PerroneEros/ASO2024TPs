@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">+ consulta médica</div>
+  </header>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="text" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Contraseña" required>
+      <button type="submit">Ingresar</button>
+    </form>
+    <p>¿No tenés cuenta? <a href="/register">Registrate aquí</a></p>
+  </div>
+  <footer>
+    <p>2025 Consulta Médica, todos los derechos reservados</p>
+    <p>Contacto: contacto@consultamedica.com</p>
+  </footer>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const email = document.querySelector('input[name="email"]').value;
+      const password = document.querySelector('input[name="password"]').value;
+
+      fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.token && data.id) {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("userId", data.id);
+          localStorage.setItem("nombre", data.nombre);
+          window.location.href = "/listaPacientes";
+        } else {
+          alert("Credenciales inválidas");
+        }
+      })
+      .catch(() => alert("Error al iniciar sesión"));
+    });
+  </script>
+</body>
+</html>

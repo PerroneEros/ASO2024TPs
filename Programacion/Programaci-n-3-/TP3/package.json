@@ -1,0 +1,33 @@
+{
+  "name": "practico3progra3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santozzi/practico3progra3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/santozzi/practico3progra3/issues"
+  },
+  "homepage": "https://github.com/santozzi/practico3progra3#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  },
+  "description": ""
+}

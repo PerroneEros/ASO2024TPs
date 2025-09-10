@@ -1,0 +1,472 @@
+/* General */
+body {
+    min-height: 100vh; /* mínimo 100% del alto de la ventana */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;  /* Use la fuente Roboto para todo el sitio */
+    background-color: #f4f4f4; /* Color de fondo gris claro */
+    color: #333; /* Color de texto gris oscuro */
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Esto sirve para heredar el color del texto del elemento padre */
+}
+
+/* Header */
+.head {
+    display: flex; /* Distribuye elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem; 
+    background-color: #111;
+    color: white;
+}
+
+.ir-arriba {
+    display: none;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999;
+  }
+
+.logo img {
+    height: 80px; /* Ajusta el tamaño */
+    width: auto;
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+    border-radius: 20% ;
+}
+
+.Navbar ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; 
+    gap: 1.5rem; /* Espacio entre los elementos de la lista */
+}
+
+.Navbar a {
+    position: relative; /* Lo necesito para las líneas animadas */
+    text-decoration: none;
+    padding: 5px 0;  /* Un poco de espacio arriba y abajo */
+    color: white;
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+.Navbar ul li {
+    list-style: none;
+}
+
+.Navbar ul li i {
+    font-size: 1.5rem; /* Ajusta el tamaño del ícono */
+    cursor: pointer; /* Hace que el ícono sea clickeable */
+}
+.icon-dark-mode {
+    margin-left: auto; /* Empuja el ícono al final de la barra */
+    top: auto;
+
+}
+
+
+
+
+/*
+---------------------Navbar Barra de navegación---------------------
+*/
+/* Dobles Líneas animadas debajo del texto */
+.Navbar a::before,
+.Navbar a::after {
+    content: ""; 
+    position: absolute; /* Se posiciona en base al .Navbar <a> (por eso usamos relative arriba) */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff4d00; /* mismo color que el hover */
+    transform: scaleX(0); /* Las líneas están "escondidas" al inicio (ancho 0) */
+    transition: transform 0.3s ease; /* Transición suave para el ancho */
+}
+
+.Navbar a::before {
+    bottom: 0;  /* Primera línea justo debajo del texto */
+    transform-origin: left; /* Aparece desde la izquierda hacia la derecha */
+}
+
+.Navbar a::after {
+    bottom: -5px; /* Segunda línea un poco más abajo */
+    transform-origin: right; /* Esta aparece desde la derecha hacia la izquierda */
+}
+
+.Navbar a:hover {
+    color: #ff4d00; /* Cambia el color del texto al pasar el mouse */
+}
+
+.Navbar a:hover::before,
+.Navbar a:hover::after {
+    transform: scaleX(1); /* Ahora sí se muestran las dos líneas */
+}
+
+/* -------------------------------------------------------------------*/
+
+
+
+/* Front Page (Portada) */
+.slider-container {
+    width: 80%;
+    height: 33vh;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slide ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 400%;
+    height: 100%;
+    animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
+}
+
+.slide ul li {
+    list-style: none;
+    width: 100%;
+}
+
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slider-texto {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    right: 5%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 10;
+}
+
+@keyframes slide {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+
+/* Main Content */
+.content.home {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    color: white;
+}
+
+.content.home p {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Espacio entre líneas */
+    margin-bottom: 2rem;
+}
+
+.botones a {
+    display: inline-block; 
+    margin: 0 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff4d00;
+    color: white;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.botones a:hover {
+    background-color: #cc3c00; /* Color más oscuro al pasar el mouse */
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer .redes a {
+    margin: 0 0.5rem; /* Espacio entre los iconos de redes sociales */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilos generales */
+
+
+/*  MODO OSCURO */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .grid-layout {
+    background-color: #000000;
+    color: white;
+}
+
+.dark-mode .caja {
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .Boton {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+}
+
+.dark-mode .form-container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+.dark-mode .form-mapa-container{
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+
+form {
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Dark mode */
+.dark-mode form {
+    background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+    color: white;
+    box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    color: #333;
+}
+
+.dark-mode label {
+    color: #ddd;
+}
+
+.dark-mode iframe{
+    color: #000000;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select{
+    width: 90%;
+    margin: center;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 12px;
+    background-color: #ececec;
+    font-size: 1rem;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Dark mode for input fields */
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="tel"],
+.dark-mode input[type="comentarios"],
+.dark-mode select ,
+.dark-mode textarea{
+    background-color: #333;
+    color: white;
+    box-shadow: inset 2px 2px 6px rgba(255,255,255,0.05);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    background-color: #d6eaff;
+    box-shadow: 0 0 0 2px #007bff55;
+}
+
+/* Estilo para el textarea */
+textarea {
+    width: 70%;
+    margin: center;
+    padding: 5px;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 12px;
+    background-color: #ececec;
+    font-size: 1rem;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Contenedor flexible para formulario + mapa */
+
+.form-mapa-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
+    background-color: #fff; /* Fondo claro para evitar superposición */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .form-container {
+    flex: 1 1 400px;
+    z-index: 2;
+  }
+  
+  .mapa {
+    flex: 1 1 400px;
+    z-index: 1;
+  }
+  
+  .mapa iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsive para móviles */
+  @media (max-width: 768px) {
+    .form-mapa-container {
+      flex-direction: column;
+    }
+  
+    .mapa iframe {
+      height: 250px;
+      background-color: #000000;
+    }
+  }
+
+/* Contenedor para los campos de contacto (email y tel) en línea */
+.contact-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; /* Espacio entre los campos */
+}
+
+.contact-fields input[type="email"],
+.contact-fields input[type="tel"]
+.contact-fields input[type="comentarios"] {
+    width: 48%; /* Ancho ajustado para los dos campos */
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ececec;
+    font-size: 1rem;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-fields input[type="email"]:focus,
+.contact-fields input[type="tel"]:focus
+.contact-fields input[type="comentarios"]:focus {
+    outline: none;
+    background-color: #d6eaff;
+    box-shadow: 0 0 0 2px #007bff55;
+}
+
+/* Estilo para el modo oscuro */
+.dark-mode .contact-fields input[type="email"],
+.dark-mode .contact-fields input[type="tel"]
+.dark-mode .contact-fields input[type="comentarios"]{
+    background-color: #333;
+    color: white;
+    box-shadow: inset 2px 2px 6px rgba(255,255,255,0.05);
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 1rem;
+    width: 100%; /* Esto hace que los botones ocupen todo el ancho disponible */
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button[type="submit"] {
+    background-color: #ff9100;
+    color: white;
+    font-size: 90%;
+}
+
+button[type="submit"]:hover {
+    background-color: #000000;
+}
+
+button[type="reset"] {
+    background-color: #ff9100;
+    color: white;
+    margin-top: 1rem; /* Espaciado entre los botones */
+}
+
+button[type="reset"]:hover {
+    background-color: #000000;
+}

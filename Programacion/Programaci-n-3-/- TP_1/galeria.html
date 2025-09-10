@@ -1,0 +1,218 @@
+<!DOCTYPE html> <!-- Declara que el documento es un documento HTML5 -->
+<html lang="en"> <!-- Define que el lenguaje del contenido es inglés -->
+
+    <head> <!-- Contiene los metadatos de la página (información que no se ve directamente en la página) -->
+        <meta charset="UTF-8"> <!-- Establece la codificación de caracteres como UTF-8 para soportar caracteres especiales -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsiva en dispositivos móviles -->
+        <title>Autos Al Piso</title> <!-- Título de la página, que aparece en la pestaña del navegador -->
+        
+        <!-- Enlace al archivo CSS para los estilos de la página -->
+        <link rel="stylesheet" href="style.css"> 
+        <!-- Enlace a otro archivo CSS para estilos específicos de la galería -->
+        <link rel="stylesheet" href="galeria.css"> 
+        <!-- Enlace a un archivo JS que se ejecutará después de cargar el contenido (defer) -->
+        <script src="index.js" defer></script> 
+        <!-- Enlace a la hoja de estilos de los íconos de Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        <!-- Establece un favicon para la página, usando una imagen como ícono en la pestaña del navegador -->
+        <link rel="icon" href="img/WhatsApp%20Image%202025-04-09%20at%204.21.12%20PM.jpeg">
+        <!-- Importa la fuente "Roboto" desde Google Fonts para usarla en el contenido -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    
+    <body> <!-- Contenido visible de la página -->
+    
+        <header class="head"> <!-- Encabezado de la página -->
+    
+            <div class="logo"> <!-- Contenedor para el logo -->
+                <!-- Enlace que redirige a la página de inicio -->
+                <a href="index.html">
+                    <!-- Imagen del logo -->
+                    <img src="img/WhatsApp%20Image%202025-04-09%20at%204.21.12%20PM.jpeg" alt="Logo">
+                </a>
+            </div>
+    
+            <!-- Barra de navegación con enlaces -->
+            <nav class="Navbar">
+                <ul> <!-- Lista de navegación -->
+                    <li><a href="index.html">Inicio</a></li> <!-- Enlace a la página de inicio -->
+                    <li><a href="index.html#home">Nosotros</a></li> <!-- Enlace de "Nosotros" (aún no funcional) -->
+                    <li><a href="#">Vehículos</a></li> <!-- Enlace de "Vehículos" (aún no funcional) -->
+                    <li><a href="contactos.html">Contáctenos</a></li> <!-- Enlace de "Contáctenos" (aún no funcional) -->
+                    <!-- Icono de Bootstrap para cambiar el tema oscuro o claro -->
+                    <li><i class="bi bi-brightness-high-fill" id="toggleDark"></i></li> 
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Sección principal que contiene la galería de imágenes -->
+        <section class="content galeria">
+            <!-- Grid de imágenes que se muestran en forma de galería -->
+            <div class="grid-layout">
+                <div class="caja">
+                  <img src="img/Auto1.jpg" alt="Auto 1">
+                  <a href="#modal1" class="Boton">Ver más</a>
+                </div>
+                <div class="modal" id="modal1">
+                    <div class="modal-content">
+                      <div class="close-btn"><a href="#">X</a></div>
+                      <div class="modal-img">
+                        <img src="img/Auto1.jpg" alt="Auto 1 ampliado">
+                      </div>
+                      <h3>Auto 1</h3>
+                      <p>Descripción del auto 1, esto es una tarjeta <p>
+                      <a href="" class="btn">Más información.</a>
+                    </div>
+                  </div>
+
+                
+                  <div class="caja">
+                    <img src="img/Auto2.jpg" alt="Auto 2">
+                    <a href="#modal2" class="Boton">Ver más</a>
+                  </div>
+                  <div class="modal" id="modal2">
+                      <div class="modal-content">
+                        <div class="close-btn"><a href="#">X</a></div>
+                        <div class="modal-img">
+                          <img src="img/Auto2.jpg" alt="Auto 2 ampliado">
+                        </div>
+                        <h3>Auto 1</h3>
+                        <p>Descripción del auto 2, esto es una tarjeta .</p>
+                        <a href="" class="btn">Más información.</a>
+                      </div>
+                    </div>
+  
+                    <div class="caja">
+                        <img src="img/Auto3.jpg" alt="Auto 3">
+                        <a href="#modal3" class="Boton">Ver más</a>
+                      </div>
+                      <div class="modal" id="modal3">
+                          <div class="modal-content">
+                            <div class="close-btn"><a href="#">X</a></div>
+                            <div class="modal-img">
+                              <img src="img/Auto3.jpg" alt="Auto 3 ampliado">
+                            </div>
+                            <h3>Auto 3</h3>
+                            <p>Descripción del auto 3, esto es una tarjeta .</p>
+                            <a href="" class="btn">Más información.</a>
+                          </div>
+                        </div>
+      
+                        <div class="caja">
+                            <img src="img/Auto4.jpg" alt="Auto 4">
+                            <a href="#modal4" class="Boton">Ver más</a>
+                          </div>
+                          <div class="modal" id="modal4">
+                              <div class="modal-content">
+                                <div class="close-btn"><a href="#">X</a></div>
+                                <div class="modal-img">
+                                  <img src="img/Auto4.jpg" alt="Auto 1 ampliado">
+                                </div>
+                                <h3>Auto 4</h3>
+                                <p>Descripción del auto 1,esto es una tarjeta </p>
+                                <a href="" class="btn">Más información.</a>
+                              </div>
+                            </div>
+          
+                            <div class="caja">
+                                <img src="img/Auto5.jpg" alt="Auto 5">
+                                <a href="#modal5" class="Boton">Ver más</a>
+                              </div>
+                              <div class="modal" id="modal5">
+                                  <div class="modal-content">
+                                    <div class="close-btn"><a href="#">X</a></div>
+                                    <div class="modal-img">
+                                      <img src="img/Auto5.jpg" alt="Auto 5 ampliado">
+                                    </div>
+                                    <h3>Auto 5</h3>
+                                    <p>Descripción del auto 5,esto es una tarjeta .</p>
+                                    <a href="" class="btn">Más información.</a>
+                                  </div>
+                                </div>
+              
+                                <div class="caja">
+                                    <img src="img/Auto6.jpg" alt="Auto 6">
+                                    <a href="#modal6" class="Boton">Ver más</a>
+                                  </div>
+                                  <div class="modal" id="modal6">
+                                      <div class="modal-content">
+                                        <div class="close-btn"><a href="#">X</a></div>
+                                        <div class="modal-img">
+                                          <img src="img/Auto6.jpg" alt="Auto 6 ampliado">
+                                        </div>
+                                        <h3>Auto 6</h3>
+                                        <p>Descripción del auto 6, esto es una tarjeta .</p>
+                                        <a href="" class="btn">Más información.</a>
+                                      </div>
+                                    </div>
+                  
+                                    <div class="caja">
+                                        <img src="img/Auto11.jpg" alt="Auto 7">
+                                        <a href="#modal7" class="Boton">Ver más</a>
+                                      </div>
+                                      <div class="modal" id="modal7">
+                                          <div class="modal-content">
+                                            <div class="close-btn"><a href="#">X</a></div>
+                                            <div class="modal-img">
+                                              <img src="img/Auto11.jpg" alt="Auto 7 ampliado">
+                                            </div>
+                                            <h3>Auto 7</h3>
+                                            <p>Descripción del auto 7,esto es una tarjeta .</p>
+                                            <a href="" class="btn">Más información.</a>
+                                          </div>
+                                        </div>
+                      
+                                        <div class="caja">
+                                            <img src="img/Auto8.jpg" alt="Auto 8">
+                                            <a href="#modal8" class="Boton">Ver más</a>
+                                          </div>
+                                          <div class="modal" id="modal8">
+                                              <div class="modal-content">
+                                                <div class="close-btn"><a href="#">X</a></div>
+                                                <div class="modal-img">
+                                                  <img src="img/Auto8.jpg" alt="Auto 8 ampliado">
+                                                </div>
+                                                <h3>Auto 8</h3>
+                                                <p>Descripción del auto 8,esto es una tarjeta </p>
+                                                <a href="" class="btn">Más información.</a>
+                                              </div>
+                                            </div>
+                          
+
+                                            <div class="caja">
+                                                <img src="img/Auto9.jpg" alt="Auto 9">
+                                                <a href="#modal9" class="Boton">Ver más</a>
+                                              </div>
+                                              <div class="modal" id="modal9">
+                                                  <div class="modal-content">
+                                                    <div class="close-btn"><a href="#">X</a></div>
+                                                    <div class="modal-img">
+                                                      <img src="img/Auto9.jpg" alt="Auto 9 ampliado">
+                                                    </div>
+                                                    <h3>Auto 9</h3>
+                                                    <p>Descripción del auto 9, esto es una tarjeta </p>
+                                                    <a href="" class="btn">Más información.</a>
+                                                  </div>
+                                                </div>
+                              
+                                                <div class="caja">
+                                                    <img src="img/Auto10.jpg" alt="Auto 10">
+                                                    <a href="#modal10" class="Boton">Ver más</a>
+                                                  </div>
+                                                  <div class="modal" id="modal10">
+                                                      <div class="modal-content">
+                                                        <div class="close-btn"><a href="#">X</a></div>
+                                                        <div class="modal-img">
+                                                          <img src="img/Auto10.jpg" alt="Auto 10 ampliado">
+                                                        </div>
+                                                        <h3>Auto 10</h3>
+                                                        <p>Descripción del auto 10, esto es una tarjeta </p>
+                                                        <a href="" class="btn">Más información.</a>
+                                                      </div>
+                                                    </div>
+                                  
+            </div>
+        </section>
+    
+    </body>
+</html>

@@ -1,0 +1,179 @@
+/* Estilos de la galería */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.caja {
+    position: relative;
+    background-color: #ffffff;
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, background-color 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    will-change: transform;
+}
+
+.caja:hover {
+    transform: scale(1.05);
+}
+
+.caja img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.Boton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, background-color 0.5s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.caja:hover .Boton {
+    opacity: 1;
+}
+
+/* Modal mejorado */
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.4s;
+    z-index: 9999;
+}
+
+.modal-content {
+    padding: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h3 {
+    margin-top: 20px;
+}
+
+.modal-content p {
+    margin: 20px 0;
+}
+
+.modal-img {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1rem;
+}
+
+.modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.close-btn a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 20px;
+    color: white;
+}
+
+.close-btn a:hover {
+    color: red;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal:target .modal-content {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+}
+
+/* Animación modal */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+        height: auto;
+    }
+}

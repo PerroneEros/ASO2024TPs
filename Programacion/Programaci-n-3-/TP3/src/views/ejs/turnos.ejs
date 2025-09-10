@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Turnos del Médico</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">+ consulta médica</div>
+    <button class="login-button" onclick="logout()">Cerrar sesión</button>
+  </header>
+
+  <div class="turnos-container">
+    <h2>Turnos del médico: <span id="nombreMedico"></span></h2>
+    <ul id="lista-turnos">
+      <li>Cargando turnos...</li>
+    </ul>
+
+    <h2>Agregar nuevo turno</h2>
+    <form id="form-turno">
+      <input type="text" name="nombre" placeholder="Nombre del paciente" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="date" name="fecha" required>
+      <input type="time" name="hora" required>
+      <button type="submit" class="reserve-button">Guardar Turno</button>
+    </form>
+
+    <div style="margin-top: 20px;">
+      <a href="/"><button class="reserve-button">Volver al inicio</button></a>
+      <a href="/listaPacientes" style="margin-left: 10px;">
+        <button class="reserve-button">Ir a mis turnos</button>
+      </a>
+    </div>
+
+  <script>
+    const token = localStorage.getItem("token");
+    const userId = localStorage.getItem("userId");
+    const nombre = localStorage.getItem("nombre");
+    const lista = document.getElementById("lista-turnos");
+    document.getElementById("nombreMedico").textContent = nombre || "Desconocido";
+
+    if (!token || !userId) {
+      alert("Debes iniciar sesión");
+      window.location.href = "/login";
+    }
+
+    function cargarTurnos() {
+      fetch(`/api/v1/turnos/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(res => {
+        if (!res.ok) throw new Error("No se encontraron turnos");
+        return res.json();
+      })
+      .then(data => {
+        lista.innerHTML = "";
+        if (!Array.isArray(data) || data.length === 0) {
+          lista.innerHTML = "<li>No se encontraron turnos</li>";
+          return;
+        }
+
+        data.forEach(t => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <strong>${t.nombre}</strong> - ${t.email}<br>
+            Turno: ${t.fecha} - ${t.hora}
+            <form onsubmit="eliminarTurno(event, '${t.id}')">
+              <button type="submit" class="eliminar-button">Eliminar</button>
+            </form>
+          `;
+          lista.appendChild(li);
+        });
+      })
+      .catch(() => lista.innerHTML = "<li>Error al cargar turnos</li>");
+    }
+
+    function eliminarTurno(e, id) {
+      e.preventDefault();
+      fetch(`/api/v1/turnos/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(() => cargarTurnos())
+      .catch(() => alert("Error al eliminar turno"));
+    }
+
+    document.getElementById("form-turno").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const datos = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        fecha: form.fecha.value,
+        hora: form.hora.value
+      };
+
+      fetch("/api/v1/turnos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(datos)
+      })
+      .then(res => {
+        if (!res.ok) throw new Error("Error al crear el turno");
+        return res.json();
+      })
+      .then(() => {
+        alert("Turno creado correctamente");
+        form.reset();
+        cargarTurnos();
+      })
+      .catch(() => alert("No se pudo crear el turno"));
+    });
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "/login";
+    }
+
+    cargarTurnos();
+  </script>
+</body>
+</html>

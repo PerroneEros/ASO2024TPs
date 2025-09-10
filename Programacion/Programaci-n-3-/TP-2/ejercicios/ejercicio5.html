@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      .grupo-formulario {
+        margin-bottom: 15px;
+      }
+
+      .grupo-formulario label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .grupo-formulario input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .mensaje-error {
+        display: block;
+        color: red;
+        font-size: 15px;
+        height: 15px;
+        margin-top: 5px;
+      }
+
+      #a {
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        color: #007bff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="formulario">
+      <div class="grupo-formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" />
+        <span class="mensaje-error" id="error-nombre"></span>
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="correo">Correo electrónico</label>
+        <input type="text" id="correo" name="correo" />
+        <span class="mensaje-error" id="error-correo"></span>
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" />
+        <span class="mensaje-error" id="error-edad"></span>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="a">
+      <a href="/tp2/index.html">Página principal</a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const formulario = document.getElementById("formulario");
+        const nombre = document.getElementById("nombre");
+        const correo = document.getElementById("correo");
+        const edad = document.getElementById("edad");
+        const boton = formulario.querySelector("button");
+
+        boton.addEventListener("click", function (e) {
+          e.preventDefault();
+          let esValido = true;
+
+          limpiarError(nombre);
+          limpiarError(correo);
+          limpiarError(edad);
+
+          if (nombre.value.trim() === "") {
+            mostrarError(nombre, "El nombre es obligatorio.");
+            esValido = false;
+          }
+
+          if (correo.value.trim() === "") {
+            mostrarError(correo, "El correo electrónico es obligatorio.");
+            esValido = false;
+          } else if (!correoValido(correo.value)) {
+            mostrarError(correo, "Formato de correo inválido.");
+            esValido = false;
+          }
+
+          if (edad.value.trim() === "") {
+            mostrarError(edad, "La edad es obligatoria.");
+            esValido = false;
+          } else if (isNaN(edad.value) || Number(edad.value) <= 18) {
+            mostrarError(edad, "Debes ser mayor de 18 años.");
+            esValido = false;
+          }
+
+          console.log("Resultado de validación:", esValido);
+
+          if (esValido) {
+            alert("Formulario enviado!");
+            formulario.submit();
+          }
+        });
+
+        function mostrarError(campo, mensaje) {
+          const errorEl = document.getElementById(`error-${campo.id}`);
+          errorEl.textContent = mensaje;
+        }
+
+        function limpiarError(campo) {
+          const errorEl = document.getElementById(`error-${campo.id}`);
+          errorEl.textContent = "";
+        }
+
+        function correoValido(valor) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(valor);
+        }
+      });
+    </script>
+  </body>
+</html>

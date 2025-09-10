@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos Al Piso</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="img/WhatsApp%20Image%202025-04-09%20at%204.21.12%20PM.jpeg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header class="head"> 
+        <div class="logo">
+            <img src="img/WhatsApp%20Image%202025-04-09%20at%204.21.12%20PM.jpeg" alt="Logo">
+        </div>
+        <nav class="Navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contactos.html">Nosotros</a></li>
+                <li><a href="galeria.html">Vehículos</a></li>
+                <li><a href="contactos.html">Contáctenos</a></li>
+                <li><i class="bi bi-brightness-high-fill" id="toggleDark"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Ir arriba boton-->
+    <a class="ir-arriba" href="javascript:void(0)" title="Volver arriba">
+        <span class="fa-stack">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-arrow-up fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+    <section class="content contacto" id="contacto">
+        <div class="form-mapa-container">
+    
+            <!-- Formulario -->
+            <form class="form-container">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" />
+                </div>
+    
+                <div class="contact-fields">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Ingrese su Email" />
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su Teléfono" />
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea  id="comentarios" name="comentarios" rows="4" placeholder="Ingrese su comentario"></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="opciones">Selecciona una opción:</label>
+                    <select id="opciones" name="opciones">
+                        <option value="">-- Selecciona --</option>
+                        <option value="op1">Opción 1</option>
+                        <option value="op2">Opción 2</option>
+                        <option value="op3">Opción 3</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label>Preferencia de contacto:</label>
+                    <div class="options">
+                        <label><input type="radio" name="preferencia" value="email" /> Email</label>
+                        <label><input type="radio" name="preferencia" value="telefono" /> Teléfono</label>
+                        <label><input type="checkbox" name="condiciones" /> Acepta términos y condiciones</label>
+                    </div>
+                </div>
+    
+                <div class="buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+    
+            <!-- Mapa -->
+            <div class="mapa">
+                <h3>Ubicación de la UTN Bahía Blanca</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.3533900901457!2d-62.25998102465611!3d-38.73265208711029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95eda3323284dd19%3A0x659d42ca958223f1!2sUTN%20-%20Facultad%20Regional%20Bah%C3%ADa%20Blanca!5e0!3m2!1ses-419!2sar!4v1744759580988!5m2!1ses-419!2sar" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+<footer class="footer">
+    <p>© 2025 Autos Al Piso. Todos los derechos reservados.</p>
+    <div class="redes">
+        <a href="#"><img src="img/github-icono.jpg" alt="GitHub" width="24"></a>
+        <a href="#"><img src="img/linkedin-icono.jpg" alt="LinkedIn" width="24"></a>
+    </div>
+</footer>
+    
+</body>
+</html>
