@@ -1,0 +1,60 @@
+<!--Crea una página con un botón que, al hacer clic, cambie el texto de un <p> por una frase aleatoria de un array con 5 frases. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+    <style>
+      body {
+        font-family: Arial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: antiquewhite;
+      }
+
+      section {
+        text-align: center;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 8px;
+        background-color: aliceblue;
+        color: aqua;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #00796b;
+      }
+
+      #texto {
+        font-size: 30px;
+        margin: 20px 0;
+        color: #00796b;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2>Ejercicio - cambiar texto aleaoriamente</h2>
+      <div id="texto">texto</div>
+      <button onclick="cambiarTexto()">Cambiar Texto</button>
+    </section>
+    <script>
+      function cambiarTexto() {
+        const frases = ["hola", "chau", "hermano", "piola", "feliz"];
+        const randomIndex = Math.floor(Math.random() * frases.length);
+        document.getElementById("texto").textContent = frases[randomIndex];
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!--Crea un formulario con campos: nombre, edad, email. Si alguno está vacío o la edad no es un número mayor a 0, muestra el error correspondiente debajo de cada campo.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5 - Formulario con errores</title>
+    <style>
+      body {
+        font-family: Arial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      form {
+        text-align: center;
+      }
+
+      input,
+      button {
+        font-size: 16px;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #388e3c;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Ejercicio 5 - Formulario con errores</h2>
+    <form onsubmit="ValidarFormulario(event)">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Nombre" />
+      <br />
+      <label for="edad">Edad:</label>
+      <input
+        type="number"
+        id="edad"
+        placeholder="Edad"
+        min="0"
+        max="120"
+        required
+      />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Email" />
+      <div id="MensajeError" class="error"></div>
+      <br />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      function ValidarFormulario(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const edad = document.getElementById("edad").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mensaje = document.getElementById("MensajeError");
+
+        if (nombre === "" || edad === "" || email === "") {
+          mensaje.textContent = "Por favor, completa todos los campos.";
+        } else {
+          mensaje.textContent = "";
+          alert("Formulario enviado con éxito");
+        }
+      }
+    </script>
+  </body>
+</html>
