@@ -1,0 +1,707 @@
+📄 Unidad 1: Software e Ingeniería del Software
+Conceptos Clave
+Software: Producto lógico creado y mantenido por programadores.
+Ingeniería del Software (IS): Conjunto de procesos, métodos y herramientas para desarrollar software de calidad.
+Importancia: El software influye en todos los aspectos de la vida moderna.
+Particularidades del Software
+Es un producto lógico, no físico.
+No se desgasta como el hardware.
+Su "fabricación" requiere más intelecto que infraestructura.
+Producto Final
+Para el ingeniero: conjunto de programas, datos y artefactos.
+Para el usuario: información útil y transformadora.
+Dominios de Aplicación
+Sistemas
+Aplicación
+Ingeniería y ciencias
+Software incrustado
+Software de línea de productos
+Web/Mobile
+Inteligencia Artificial
+El Proceso del Software
+Capas: Herramientas, Métodos, Proceso, QA
+Actividades estructurales: Comunicación, Planeación, Modelado, Construcción, Despliegue
+Actividades sombrilla: revisiones, QA, configuración, mediciones
+Práctica de la IS
+Entender el problema
+Planear la solución
+Ejecutar el plan
+Examinar el resultado
+Principios Generales
+Valor, simplicidad, visión, reutilización, planeamiento, pensamiento
+
+📊 Unidad 2: Modelos de Procesos
+Proceso de Software
+Estructura organizada para construir software.
+Implica interacción entre usuarios, diseñadores y herramientas.
+Diferencias
+Proceso: secuencia estructurada.
+Ingeniería: conjunto de prácticas y tecnologías aplicadas.
+Flujos del Proceso
+Lineal: paso a paso.
+Iterativo: mejoras en ciclos (ej. RUP).
+Evolutivo: mejora basada en feedback (ej. prototipos, ágil).
+Paralelo: actividades simultáneas.
+Modelos Prescriptivos
+Cascada
+Modelo en V (verificación y validación)
+Incremental
+Evolutivo
+Espiral (enfoque en riesgos)
+Proceso Unificado (PU)
+Fases: Concepción, Elaboración, Construcción, Transición, Producción
+Características: dirigido por casos de uso, centrado en arquitectura, iterativo e incremental
+Elementos del PU
+Trabajadores (quién)
+Actividades (cómo)
+Artefactos (qué)
+Flujo (cuándo)
+Patrones de Proceso
+Soluciones reutilizables a problemas comunes
+Tipos: Etapa, Tarea, Fase
+Ejemplos
+En cascada, iterativo, basado en componentes, ágil
+
+🏋️ Unidad 3: Desarrollo Ágil
+Manifiesto Ágil (2001)
+Individuos sobre procesos
+Software funcionando sobre documentación
+Colaboración sobre negociación contractual
+Respuesta al cambio sobre seguir un plan
+Filosofía Ágil
+Entregas rápidas
+Equipos pequeños y motivados
+Poca burocracia, más comunicación
+Principios Ágiles (12)
+Entrega continua
+Bienvenida al cambio
+Software funcional como medida de progreso
+Equipos autoorganizados
+Simplicidad
+Reflexión continua para mejorar
+Factores Humanos
+Colaboración, respeto, confianza, organización propia
+Procesos Ágiles
+XP (Extreme Programming): simplicidad, pruebas, programación en pares
+Scrum
+Otros: DAS, DSDM, Cristal, FDD, Lean, Modelado Ágil, PUA
+
+🪡 Unidad 4: Comprensión y Modelado de Requerimientos
+Objetivos
+Entender al cliente
+Evaluar factibilidad
+Negociar una solución
+Especificar y validar los requerimientos
+Recomendaciones
+Identificar a los participantes
+Formular preguntas clave (qué se espera, restricciones, beneficios, etc.)
+Modelado de Requerimientos
+Describe el "qué" del sistema, no el "cómo"
+Requisitos funcionales y no funcionales
+Herramientas
+Diagramas:
+Actividad
+Clases
+Estado
+Swimlane (canales)
+Entidad-Relación (DER)
+Historias de Usuario
+Casos de Uso (UML)
+Buenas prácticas
+Minimizar acoplamiento
+Visibilidad del sistema
+Claridad y simplicidad
+
+🌟 Unidad 5: Calidad de Software
+Lineamientos
+Arquitectura basada en patrones
+Representaciones claras
+Modularidad y buenas interfaces
+Notación efectiva
+FURPS (atributos de calidad)
+Functionality: funciones, interoperabilidad, seguridad
+Usability: facilidad de uso, estética, documentación
+Reliability: robustez, disponibilidad, recuperabilidad
+Performance: velocidad, escalabilidad, eficiencia
+Supportability: mantenibilidad, flexibilidad, instalación, adaptabilidad
+Diseño de Calidad
+Abstracción
+Arquitectura
+Patrones
+Modularidad
+Ocultamiento de información
+Independencia funcional (alta cohesión, bajo acoplamiento)
+Administración de Calidad
+Procesos probados
+Buena gestión
+Control de Calidad (QC)
+Aseguramiento de Calidad (QA)
+Dimensiones (Garvin)
+Desempeño, Características, Confiabilidad, Conformidad, Durabilidad, Servicio, Estética, Percepción
+Costos de Calidad
+Prevención, Evaluación, Fallas (internas y externas)
+Revisiones
+Informales: ágiles pero menos precisas
+RTF (Revisión Técnica Formal):
+Preparación previa
+Roles definidos (moderador, lector, escriba, autor, inspector)
+Reportes
+Métricas de revisión
+Errores, esfuerzo, TPT, densidad
+Diferencias
+QC: verifica el producto
+QA: verifica el proceso
+
+🧪 Unidad 6: Estrategias de Prueba de Software
+Definiciones principales
+Pruebas (Testing): detectar errores en un programa mediante la ejecución de pruebas.
+
+
+Depuración (Debugging): corregir errores hallados durante el testing.
+
+
+Validación: comprobar que el producto cumple las necesidades del usuario.
+
+
+Verificación: comprobar que el producto cumple las especificaciones.
+
+
+Aspectos estratégicos
+Requerimientos cuantificables.
+
+
+Objetivos de prueba claros.
+
+
+Perfil de usuario.
+
+
+Plan de pruebas con ciclos rápidos.
+
+
+Software robusto y autoverificable.
+
+
+Revisiones técnicas efectivas.
+
+
+Mejora continua.
+
+
+Tipos de pruebas
+Prueba Unitaria
+Prueba de funciones o métodos de forma aislada.
+
+
+Detectan errores temprano.
+
+
+Facilitan el mantenimiento.
+
+
+Funcionan como documentación viva.
+
+
+Prueba de Integración
+Prueba de interfaces entre componentes.
+
+
+Se prueba la arquitectura ensamblada.
+
+
+Prueba de Regresión
+Verifica que los cambios no generen nuevos errores.
+
+
+Tres tipos de casos de prueba:
+
+
+Muestra representativa.
+
+
+Funciones afectadas por los cambios.
+
+
+Componentes modificados.
+
+
+Prueba de Humo
+Prueba rápida que detecta fallos graves.
+
+
+Se ejecuta frecuentemente en proyectos críticos.
+
+
+Pruebas de Clase
+Prueba de operaciones encapsuladas en clases.
+
+
+Se prueba el comportamiento de estado.
+
+
+Se requiere probar herencia y subclases.
+
+
+Dobles de prueba (Test Doubles)
+Dummy: relleno sin lógica.
+
+
+Stub: respuestas fijas.
+
+
+Fake: implementación simplificada.
+
+
+Mock: verifica interacciones.
+
+
+Spy: espía interacciones reales.
+
+
+Pruebas de Validación (E2E)
+Simulan el uso completo por parte del usuario.
+
+
+Verifican funcionalidad visible.
+
+
+Resultados:
+
+
+✅ Cumple especificaciones.
+
+
+🐞 Lista de deficiencias.
+
+
+Pruebas Alfa y Beta
+Alfa: en el sitio del desarrollador.
+
+
+Beta: en el entorno del usuario, sin intervención del desarrollador.
+
+
+Pruebas Adicionales
+Recuperación: evaluar recuperación tras fallos.
+
+
+Seguridad: vulnerar mecanismos de seguridad.
+
+
+Esfuerzo: prueba límites de carga.
+
+
+Performance: evaluar rendimiento.
+
+
+Despliegue: probar en distintas plataformas.
+
+
+Depuración
+Puede:
+
+
+Corregir el error.
+
+
+No encontrar la causa.
+
+
+Seguir hipótesis para descubrir el error.
+
+
+Preguntas guía:
+
+
+¿El error ocurre en otro lado también?
+
+
+¿Puede generar nuevos errores la corrección?
+
+
+¿Cómo prevenir errores similares a futuro?
+
+
+🔎 Recomendaciones Finales
+Repasá con ejemplos cada modelo y proceso.
+Practicá diagramas: clases, actividades, estados.
+Recordá las siglas y definiciones: FURPS, QA/QC, PU.
+Simulá explicar los conceptos a otra persona.
+Revisá las lecturas recomendadas de Pressman para ampliar.
+GUÍA DE RESPUESTAS COMPLETA – METODOLOGÍA DE SISTEMAS I
+ Basado en el material PDF oficial
+
+1. ¿Cuál es la diferencia entre la visión del producto por parte del ingeniero de software y del usuario final? ¿Por qué ocurre esa divergencia?
+El ingeniero ve el software como un conjunto de programas y datos técnicos.
+
+
+El usuario lo percibe como una herramienta que soluciona un problema.
+
+
+La divergencia se da porque tienen intereses distintos: uno piensa en la construcción, el otro en el resultado y utilidad.
+
+
+
+2. Enumere 3 desafíos específicos en el desarrollo de software para videojuegos frente al software empresarial.
+Videojuegos: rendimiento gráfico, experiencia interactiva, prueba en múltiples dispositivos.
+
+
+Empresarial: integración con sistemas existentes, seguridad, mantenimiento de datos.
+
+
+
+3. Nombre las principales diferencias entre el Modelo Evolutivo y el Modelo Espiral. ¿En qué circunstancias se aplican?
+El evolutivo parte de una versión simple y mejora según el feedback.
+
+
+El espiral se centra en la gestión de riesgos y planificación cíclica.
+
+
+El evolutivo sirve para productos poco definidos; el espiral para proyectos críticos o costosos.
+
+
+
+4. ¿Qué diferencia hay entre los modelos Iterativo y Evolutivo? Dé ejemplos.
+Iterativo: parte de un diseño base y se mejora en ciclos definidos.
+
+
+Evolutivo: parte de algo básico que se transforma según necesidades.
+ Ejemplos:
+
+
+Iterativo: una app de notas que mejora en cada versión.
+
+
+Evolutivo: un sitio web que arranca solo con productos y luego se le suma carrito y pago.
+
+
+
+5. ¿Es posible demostrar que un software es correcto? Justifique.
+Teóricamente sí, mediante técnicas formales. Pero en la práctica es muy costoso o inviable aplicarlo a sistemas completos. Es más viable demostrar partes críticas.
+
+
+
+6. ¿Qué es un software “suficientemente bueno”? Dé un ejemplo real.
+Es aquel que cumple los requisitos funcionales y no funcionales básicos, aunque no sea perfecto. Se prioriza la entrega a tiempo y el valor para el usuario.
+ Ejemplo: una app de banco que funciona bien pero puede tener demoras o errores menores.
+
+
+
+7. Describa la diferencia entre verificación y validación. ¿Ambas usan diseño de casos de prueba?
+Verificación: verifica que el software cumple con lo especificado.
+
+
+Validación: verifica que el software satisface lo que el usuario necesita.
+
+
+Ambas usan pruebas, pero con diferentes enfoques.
+
+
+
+8. Explique la diferencia entre QC y QA.
+QC (Control de Calidad): controla el producto, busca errores mediante pruebas.
+
+
+QA (Aseguramiento de Calidad): se enfoca en el proceso para prevenir errores.
+
+
+
+9. Describa un escenario donde sería más apropiado un enfoque tradicional y otro donde conviene usar Agile.
+Tradicional: sistema bancario, médico o militar.
+
+
+Agile: app de delivery o red social.
+
+
+
+10. ¿Qué es la medida principal de avance en proyectos ágiles? ¿Por qué es tan importante?
+La medida principal es el software funcionando.
+
+
+Es importante porque representa valor real entregado y permite validación temprana y continua.
+
+
+
+11. Compare ventajas y desventajas del modelo en cascada y del modelo iterativo.
+Cascada: + claro, + organizado, pero - rígido con retrocesos costosos.
+
+
+Iterativo: + flexible, + mejora continua, pero puede derivar en sobrecostos.
+
+
+
+12. ¿Qué son los patrones de proceso? ¿Cómo contribuyen a la mejora continua?
+Son soluciones reutilizables a problemas comunes.
+
+
+Guían en buenas prácticas y permiten estandarizar procesos exitosos.
+
+
+
+13. ¿Qué tipos de patrones de proceso existen? Dé ejemplos.
+De etapa (ej: comunicación)
+
+
+De tarea (ej: recabar requisitos)
+
+
+De fase (ej: modelo espiral)
+
+
+
+14. ¿Qué desafíos pueden surgir al implementar metodologías ágiles en proyectos grandes?
+Dificultad de coordinación.
+
+
+Comunicación constante entre equipos.
+
+
+Pérdida de visión unificada del producto.
+
+
+
+15. ¿Qué es la programación en parejas (XP)? ¿Cuáles son sus ventajas y posibles desafíos?
+Dos desarrolladores trabajan juntos: uno escribe, otro revisa.
+
+
+Ventajas: mejora calidad, aprendizaje.
+
+
+Desafíos: puede parecer lento o ineficiente si no hay sinergia.
+
+
+
+16. ¿Cuáles son los roles principales de un equipo SCRUM? ¿Qué responsabilidades tiene cada uno?
+Product Owner: prioriza requerimientos, representa al cliente.
+
+
+Scrum Master: elimina impedimentos, facilita el proceso.
+
+
+Equipo de desarrollo: construye el producto.
+
+
+
+17. ¿Qué preguntas llevarías a una reunión de relevamiento de requerimientos para un “carrito de compras”?
+¿Qué productos se venden?
+
+
+¿Requiere login?
+
+
+¿Métodos de pago?
+
+
+¿Stock?
+
+
+¿Cupones?
+
+
+¿Método de envío?
+
+
+¿Regulaciones?
+
+
+
+18. ¿Qué materiales llevarías para facilitar ese relevamiento?
+Pizarra
+
+
+Marcadores
+
+
+Laptop
+
+
+Plantillas de casos de uso
+
+
+Post-its
+
+
+Prototipos previos
+
+
+
+19. Desarrolle un caso de uso completo para “buscar libros sobre un tema específico en una librería en línea”.
+Actor: usuario
+
+
+Precondición: usuario entra al sitio
+
+
+Flujo principal: ingresa tema → sistema busca → muestra resultados
+
+
+Flujo alternativo: no hay resultados → mostrar mensaje
+
+
+Excepciones: sin resultados o error de conexión
+
+
+
+20. Cree un DER para un sistema de facturación simple en un negocio pequeño.
+Entidades: Cliente, Factura, Producto, Detalle_Factura
+
+
+Relaciones:
+
+
+Cliente 1→N Factura
+
+
+Factura 1→N Detalle_Factura
+
+
+Producto 1→N Detalle_Factura
+
+
+
+21. Haga un diagrama de clases correspondiente al mismo sistema.
+Cliente: nombre, email
+
+
+Producto: nombre, precio
+
+
+Factura: nro, fecha, lista de DetalleFactura
+
+
+DetalleFactura: cantidad, referencia a Producto, referencia a Factura
+ Relaciones:
+
+
+Un Cliente puede tener muchas Facturas.
+
+
+Una Factura tiene muchos DetalleFactura.
+
+
+Cada DetalleFactura referencia un Producto y una Factura.
+
+
+
+22. ¿Qué son cohesión y acoplamiento? ¿Por qué es ideal buscar alta cohesión y bajo acoplamiento?
+Cohesión: qué tan bien se relacionan las funciones dentro de un módulo.
+
+
+Acoplamiento: dependencia entre módulos.
+
+
+Alta cohesión y bajo acoplamiento = fácil de mantener y escalar.
+
+
+
+23. ¿Cuáles son los principios generales de la ingeniería de software?
+Valor del software
+
+
+Mantenerlo simple
+
+
+Planificar reutilización
+
+
+Pensar en el futuro
+
+
+Otro usará tu producto
+
+
+
+24. ¿Qué son las pruebas alfa y beta? ¿Cuál es su diferencia?
+Alfa: se hacen en entorno controlado por el desarrollador.
+
+
+Beta: se hacen con usuarios reales antes del lanzamiento final.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MODELOS DE CICLO DE VIDA
+
+1.Modelo en Cascada
+Descripción: Secuencial. Fases: Análisis → Diseño → Codificación → Pruebas → Mantenimiento.
+
+
+✅ Ventaja: Orden claro y estructurado.
+❌ Desventaja: Difícil adaptarse a cambios durante el desarrollo.
+
+
+
+
+ 2.Modelo Incremental
+Descripción: El sistema se desarrolla en partes o módulos funcionales.
+
+
+✅ Ventaja: Permite entregar versiones utilizables progresivamente.
+❌ Desventaja: La integración puede volverse compleja.
+
+
+
+ 3.Modelo de Prototipos
+Descripción: Se crean versiones preliminares para comprender mejor los requisitos.
+
+
+✅ Ventaja: Ayuda a aclarar las necesidades del cliente.
+❌ Desventaja: Riesgo de terminar con un diseño deficiente si el prototipo se convierte en el producto final.
+
+
+ 4. Modelo Espiral
+Descripción: Iterativo, incorpora análisis de riesgos en cada fase.
+
+
+✅ Ventaja: Ideal para proyectos grandes y complejos.
+❌ Desventaja: Costoso y difícil de gestionar.
+
+
+
+ 5. Modelo RUP (Rational Unified Process)
+Descripción: Basado en casos de uso y desarrollo iterativo.
+ Etapas: Inicio → Elaboración → Construcción → Transición.
+✅ Ventaja: Flexible, bien documentado y adaptable.
+❌ Desventaja: Requiere personal con experiencia.
+
+
+ 
+
+6.Modelos Ágiles (ej. Scrum, Extreme Programming - XP)
+Descripción: Enfocados en colaboración, entregas rápidas y mejora continua.
+✅ Ventaja: Flexibles, excelente respuesta al cambio.
+❌ Desventaja: Requieren alta comunicación y compromiso constante del cliente.
